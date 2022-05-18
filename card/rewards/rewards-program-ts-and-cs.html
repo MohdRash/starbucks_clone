@@ -1,0 +1,637 @@
+
+<!DOCTYPE html>
+<!--[if IE 6]><html id="ie6" class="ie9 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]-->
+<!--[if IE 7]><html id="ie7" class="ie9 lt-ie10 lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if IE 8]><html id="ie8" class="ie8 lt-ie10 lt-ie9" lang="en"><![endif]-->
+<!--[if IE 9]><html id="ie9" class="ie9 lt-ie10"lang="en"><![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"671cca5e0f","applicationID":"899226958","transactionName":"NQMBZkJRXEAEAhJQCgxJLmRzH2JSAgQlVgsWFAxeXFVAHDUAAVw=","queueTime":1,"applicationTime":238,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"671cca5e0f",applicationID:"899226958"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https:///")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    
+<title>Rewards Program Terms and Conditions | Starbucks Coffee Company</title>
+
+    <!-- BEGIN: MetaData -->
+    
+            <meta property="og:title" content="Rewards Program Terms and Conditions | Starbucks Coffee Company" />
+            <meta name="twitter:card" content="summary">
+            <meta property="og:type" content="article" />
+            <meta property="og:locale" content="en" />
+            <meta name="description" content="Rewards Program Terms and Conditions">
+            <meta property="og:description" content="Rewards Program Terms and Conditions" />
+<meta property="og:url" content="card/rewards/rewards-program-ts-and-cs" />
+    <meta property="og:site_name" content="Starbucks Coffee Company" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- END: MetaData -->
+    <!-- BEGIN: CSS -->
+        <link href="http://fonts.googleapis.com/css?family=Lato:400,700|Crete+Round:400,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../../static/css/main.css">
+    
+    <!-- END: CSS -->
+    <!-- BEGIN: Favicons -->
+    <link rel="shortcut icon" type="image/x-icon" href="../../static/images/favicon.ico" />
+<link rel="apple-touch-icon" href="../../static/images/touch-icon-iphone.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="../../static/images/touch-icon-ipad.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="../../static/images/touch-icon-iphone4.png" />
+    <!-- END: Favicons -->
+    <!-- BEGIN: Top JavaScript -->
+    <script type="text/javascript" src="../../static/js/vendor/modernizr.min.js"></script>
+<script>
+    document.createElement("picture");
+</script>
+<script src="../../static/js/vendor/picturefill.min.js" async></script>
+    
+    <!-- END: Top JavaScript -->
+</head>
+<body>
+    
+<!--[if lte IE 8]>
+<aside class="notificationBar notificationBar--oldBrowser">
+    <div >
+        <section class="validation">
+            <div class="validation_summary warning">
+                <h2 class="validation_summary_title" >You may want to update your browser</h2>
+                <div >
+                    <p>You’re using an older browser. Starbucks will work better for you if you <a href="http://windows.microsoft.com/en-gb/internet-explorer/download-ie">upgrade your browser</a> or switch to another browser.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</aside>
+<![endif]-->
+
+<div id="consent_blackbar"></div>
+
+<aside class="notificationBar notificationBar--shop">
+</aside>
+
+<header class="header_container">
+    <div class="container">
+        <div class="grid">
+            <div class="column size12of12">
+                <div class="" id="header">
+                    <ul class="skip">
+                        <li><a href="rewards-program-ts-and-cs.html#nav">skip to Main Navigation</a></li>
+                        <li><a href="rewards-program-ts-and-cs.html#content">skip to Main Content</a></li>
+                        <li><a href="rewards-program-ts-and-cs.html#footer">skip to Footer</a></li>
+                    </ul>
+                    <div >
+        <a href="../../index.html" id="logo" rel="home" title="Starbucks Logo"  >
+<img src="../../media/logo_tcm87-366_w1024_n.png" alt="Logo" data-aspect="0" class="logo" />        </a>
+</div>
+
+                    <div id="utilities" >
+        <ul class="utility_list">
+                        <li class="utility_link store_locator">
+                            <a href="https://rewards.starbucks.in/store-locator" target="_blank" title="Find A Store"  ><span aria-hidden="true" data-icon="&#x272a"></span><span class="hidden_visually med_render_visually">Find A Store</span></a>
+                        </li>
+        </ul>
+</div>
+
+                    <nav id="nav" >
+    <div class="nav_control">
+        <a href="rewards-program-ts-and-cs.html#nav">
+            <span class="hamburger"></span>
+            <span class="hidden_visually">Navigation</span>
+        </a>
+    </div>
+    <div class="nav_menu">
+            <ul>
+                    <li id="nav_0">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../../coffee.html"><strong>Coffee</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_1">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../../menu-list.html"><strong>Menu</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_2">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../../coffeehouse.html"><strong>Coffeehouse</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_3">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../../responsibility.html"><strong>Responsibility</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_4">
+                        <div class="null_left"></div>
+                            <a class="tab" href="https://rewards.starbucks.in/" target="_blank"><strong>Rewards</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_5">
+                        <div class="null_left"></div>
+                            <a class="tab" href="https://careers.starbucks.in/" target="_blank"><strong>Careers</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_6">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../../Starbucks-Seasons-Gifting.html"><strong>Starbucks Season&#39;s Gifting</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_7">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../../starbucks-delivers.html"><strong>Starbucks Delivers</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_8">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../../about-us.html"><strong>About Us</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+            </ul>
+    </div>
+</nav>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="menus" class="megaNav">
+        <ol class="container">
+                <li class="fields" id="menu_0">
+                        <div class="region size4of5 menu_content">
+                            <ol class="blocks blocks-four-up">
+                                    <li>
+                                        <p>
+                                                <a href="../../coffee/our-coffees.html">Our Coffees</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../../coffee/our-coffees/format/via.html">Starbucks VIA&#174;</a></li>
+                                                    <li><a href="../../coffee/our-coffees/format/whole-bean.html">Whole Bean Coffee</a></li>
+                                                    <li><a href="../../coffee/our-coffees/view-all-coffees.html">View All Coffees</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../coffee/finder.html">Find Your Perfect Coffee</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../coffee/espresso.html">Espresso</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../../coffee/espresso/ingredients.html">The Ingredients</a></li>
+                                                    <li><a href="../../coffee/espresso/best-equipment.html">The Best Equipment</a></li>
+                                                    <li><a href="../../coffee/espresso/who-makes-it.html">Who Makes It</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../coffee/how-to-brew.html">How to Brew Great Coffee</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/coffee/how-to-brew/coffee-press.html">Coffee Press</a></li>
+                                                    <li><a href="https://www.starbucks.in/coffee/how-to-brew/pour-over.html">Pour-Over</a></li>
+                                                    <li><a href="https://www.starbucks.in/coffee/how-to-brew/iced-pour-over.html">Iced Pour-Over</a></li>
+                                                    <li><a href="https://www.starbucks.in/coffee/how-to-brew/coffee-brewer.html">Coffee Brewer</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../coffee/ethical-sourcing.html">Ethical Sourcing</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/coffee-sourcing.html">Coffee</a></li>
+                                                    <li><a href="../../coffee/ethical-sourcing/coffee-quality.html">Coffee Quality</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/farmer-support.html">Farmer Support</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="customer-service.html">Learn More</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../../coffee/learn/roast.html">Starbucks Roast Spectrum</a></li>
+                                                    <li><a href="../../coffee/learn/coffee-form.html">Coffee by Form</a></li>
+                                                    <li><a href="../../coffee/learn/flavors-in-your-cup.html">Flavors in Your Cup</a></li>
+                                                    <li><a href="../../coffee/learn/coffee-faqs.html">Coffee FAQ</a></li>
+                                            </ol>
+                                    </li>
+                            </ol>
+                                <p class="menu_suggestion_title">
+Looking for Coffee Beverages?                                </p>
+                                    <ul class="menu_suggestion_links">
+                                            <li class="navGroup_menu_sugList_item">
+                                                    <a class="link" href="https://www.starbucks.in/menu-list/drinks/index.html"  >Drinks</a>
+                                            </li>
+                                    </ul>
+                        </div>
+                            <div class="region size1of5 menu_promo">
+                                    <div class="anchor">
+                                        
+                                    </div>
+                            </div>
+                </li>
+                <li class="fields" id="menu_1">
+                        <div class="region size4of5 menu_content">
+                            <ol class="blocks blocks-four-up">
+                                    <li>
+                                        <p>
+                                                <a href="../../menu-list/drinks.html">Drinks</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Featured_Beverages.html">Featured Beverages</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Espresso_Beverages.html">Espresso</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Freshly_Brewed_Coffee.html">Freshly Brewed Coffee</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Coffee_Frappuccino.html">Coffee Frappuccino&#174;</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Creme_Frappuccino.html">Cr&#232;me Frappuccino&#174;</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Other_Beverages.html">Other Beverages</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Cold_Brew.html">Cold Brew</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Teavana_Tea.html">Teavana&#174; Tea</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Iced_Shaken.html">Iced Shaken</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../menu-list/food-list.html">Food</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../../menu-list/food-list/featured-food.html">Featured Food</a></li>
+                                                    <li><a href="../../menu-list/food-list/Sweet_Bakery_Food.html">Sweet Bakery</a></li>
+                                                    <li><a href="../../menu-list/food-list/Savoury_Bakery_food.html">Savoury Bakery</a></li>
+                                                    <li><a href="../../menu-list/food-list/Sandwiches_Wraps.html">Sandwiches &amp; Wraps</a></li>
+                                                    <li><a href="../../menu-list/food-list/Salads_Muesli.html">Salads &amp; Muesli</a></li>
+                                                    <li><a href="../../menu-list/food-list/Desserts.html">Desserts</a></li>
+                                            </ol>
+                                    </li>
+                            </ol>
+                                <p class="menu_suggestion_title">
+                                </p>
+                        </div>
+                            <div class="region size1of5 menu_promo">
+                                    <div class="anchor">
+                                        
+                                    </div>
+                            </div>
+                </li>
+                <li class="fields" id="menu_2">
+                        <div class="region size4of5 menu_content">
+                            <ol class="blocks blocks-four-up">
+                                    <li>
+                                        <p>
+                                                <a href="../../coffeehouse/wireless-internet.html">Wireless Internet</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../store-locator/search.html">Store Locations</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../coffeehouse/store-design.html">Store Design</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../../coffeehouse/store-design/fort-mumbai.html">Fort – Mumbai</a></li>
+                                                    <li><a href="../../coffeehouse/store-design/indiranagar-bangalore.html">Indiranagar Bangalore</a></li>
+                                                    <li><a href="../../coffeehouse/store-design/koregaon-park-pune.html">Koregaon Park Pune</a></li>
+                                                    <li><a href="../../coffeehouse/store-design/hamilton-house-delhi.html">Hamilton House Delhi</a></li>
+                                                    <li><a href="../../coffeehouse/store-design/jubiliee-hills-hyderabad.html">Jubiliee Hills Hyderabad</a></li>
+                                                    <li><a href="../../coffeehouse/store-design/phoenix-market-city-chennai.html">Phoenix Market City Chennai</a></li>
+                                                    <li><a href="../../coffeehouse/store-design/park-mansions-kolkata.html">Park Mansions Kolkata</a></li>
+                                            </ol>
+                                    </li>
+                            </ol>
+                                <p class="menu_suggestion_title">
+                                </p>
+                        </div>
+                            <div class="region size1of5 menu_promo">
+                                    <a href="../mobile_application_campaign.html"  >
+                                                <p><img src="../../media/promomobile_tcm87-27713.png" alt="Starbucks app on mobile device" /></p>
+        <p><strong>Starbucks&#174; India Mobile app</strong></p>
+        <p>Scan, pay and earn rewards. It’s that simple. Get our mobile app today!</p>
+
+                                    </a>
+                            </div>
+                </li>
+                <li class="fields" id="menu_3">
+                        <div class="region size4of5 menu_content">
+                            <ol class="blocks blocks-four-up">
+                                    <li>
+                                        <p>
+                                                <a href="https://www.starbucks.in/responsibility/community.html">Community</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/responsibility/community/local-area-engagement.html">Local Area Engagement</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/community/Empowering-Girls-And-Young-Women.html">Empowering Girls And Young Women</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/community/swastha.html">Swastha</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/community/chai-project.html">Chai Project</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="https://www.starbucks.in/responsibility/ethical-sourcing.html">Ethical Sourcing</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/coffee-sourcing.html">Coffee Sourcing</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/farmer-support.html">Farmer Support</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/tea-sourcing.html">Tea Sourcing</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/cocoa-sourcing.html">Cocoa Sourcing</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="https://www.starbucks.in/responsibility/environment.html">Environment</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/responsibility/environment/recycling.html">Recycling</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/environment/energy.html">Energy</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/environment/water.html">Water</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/environment/green-building.html">Green Building</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/environment/climate-change.html">Climate Change</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="https://www.starbucks.in/responsibility/diversity.html">Diversity</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="customer-service.html">Learn More</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/responsibility/learn-more/shared-planet.html">Starbucks Shared Planet</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/learn-more/policies.html">Policies</a></li>
+                                            </ol>
+                                    </li>
+                            </ol>
+                                <p class="menu_suggestion_title">
+                                </p>
+                        </div>
+                            <div class="region size1of5 menu_promo">
+                                    <div class="anchor">
+                                        
+                                    </div>
+                            </div>
+                </li>
+                <li class="fields" id="menu_4">
+                </li>
+                <li class="fields" id="menu_5">
+                </li>
+                <li class="fields" id="menu_6">
+                </li>
+                <li class="fields" id="menu_7">
+                </li>
+                <li class="fields" id="menu_8">
+                        <div class="region size4of5 menu_content">
+                            <ol class="blocks blocks-four-up">
+                                    <li>
+                                        <p>
+                                                <a href="../../about-us/our-heritage.html">Our Heritage</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../about-us/company-information.html">Our Company</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../../about-us/company-information/mission-statement.html">Mission Statement</a></li>
+                                                    <li><a href="../../about-us/company-information/newsroom.html">Starbucks Newsroom</a></li>
+                                                    <li><a href="../../about-us/company-information/business-ethics-and-compliance.html">Business Ethics and Compliance</a></li>
+                                                    <li><a href="../../about-us/company-information/online-policies.html">Online Policies</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                 <a href="https://careers.starbucks.in/" target="_blank">Career Center</a>
+                                        </p>
+                                    </li>
+                            </ol>
+                                <p class="menu_suggestion_title">
+                                </p>
+                        </div>
+                            <div class="region size1of5 menu_promo">
+                                    <div class="anchor">
+                                        
+                                    </div>
+                            </div>
+                </li>
+        </ol>
+</div>
+
+
+
+
+<main class="main" id="main">
+    <div class="container">
+        
+        <div class="grid">
+            
+
+<!-- BEGIN: Main Region -->
+
+<div class="column lg_size8of12" typeof="Region" resource="Main">
+    <!-- BEGIN: Main Region Content -->
+<article class="articleBlock" >
+        <h1 class="articleBlock__header" >My Starbucks Rewards™ Program </h1>
+            <div class="articleBlock__text rtf">
+            <div >
+                <h3>My Starbucks Rewards™ Terms and Conditions</h3><p> </p><p>PLEASE READ THESE TERMS AND CONDITIONS FOR MY STARBUCKS REWARDS™ PROGRAM CAREFULLY. BY ACCESSING OR USING THIS PROMOTIONAL PROGRAM, YOU AGREE TO BE BOUND BY THE TERMS AND CONDITIONS DESCRIBED HEREIN AND ALL TERMS INCORPORATED BY REFERENCE. IF YOU DO NOT AGREE TO ANY OF THESE TERMS AND CONDITIONS, DO NOT PARTICIPATE IN THIS PROGRAM.</p><p>These terms and conditions (“Terms and Conditions”) apply to your access to, and participation in, My Starbucks Rewards™ program (“My Starbucks Rewards™”) which is operated by Tata Starbucks Private Limited (formerly known as "Tata Starbucks Limited"), (“TSPL”). These Terms and Conditions do not alter in any way the terms or conditions of any other agreement you may have with TSPL for products, services or otherwise. TSPL reserves the right to change, modify and/or terminate My Starbucks Rewards™ and/or these Terms and Conditions or any policy, FAQ, or guideline pertaining to My Starbucks Rewards™ at any time and in its sole discretion. Any changes or modifications will be effective immediately upon posting the revisions to <a href="../../index.html">www.starbucks.in</a>, and due to such changes or modifications your rights will be waived which you may be entitled to receive. Your participation in My Starbucks Rewards™ confirms your acceptance of these Terms and Conditions and any such changes or modifications; therefore, you should review these Terms and Conditions and applicable policies from time to time to understand the terms and conditions that apply to My Starbucks Rewards™. If you do not agree to the Terms of Use, you must stop participating in My Starbucks Rewards™.</p><p>My Starbucks Rewards™ is not targeted towards, nor intended for use by, anyone under the age of 18. If you are below the age 18, you may only use My Starbucks Rewards™ under the supervision of a parent or legal guardian who agrees to be bound by these Terms of Use.</p><p>Please read the <a href="../../about-us/company-information/online-policies/privacy-statement.html" shape="rect">Privacy Policy</a> carefully to understand how TSPL collects, uses and discloses information about its customers.</p><h3>My Starbucks Rewards™ Program</h3><h3>Program Overview</h3><p>My Starbucks Rewards™ is one way in which TSPL endeavours to reward and thank loyal customers for patronizing TSPL products at Starbucks stores in India.</p><p>To enroll in My Starbucks Rewards™ and receive program benefits, you will first need to create an account. There are multiple ways to enroll in My Starbucks Rewards™ and begin accumulating stars:</p><ol><li><p>If you have a physical Starbucks Card, or Starbucks e-Card, visit  <a href="https://rewards.starbucks.in/" target="_blank">rewards/index.html</a>. Follow the prompts to create an account and register at least one (1) activated Starbucks Card, or Starbucks e-Card. “Activation” means that you have loaded a minimum of INR 200 (Rupees Two Hundred Only) onto your Starbucks Card for the first time. The minimum balance required to activate a Starbucks Card, or Starbucks e-Card INR 200 (Rupees Two Hundred Only).</p></li><li><p>Download the Starbucks India mobile app to your Android or iPhone device. Follow the prompts to create an account and register with a Starbucks Card or Starbucks e-Card.</p></li></ol><p>The registration process may require that you provide the following information using the online registration form: username, password, email address (required in order to receive all eligible rewards), Starbucks Card number or Starbucks e-Card number, and card security code (CSC), birthday month, name, and postal address, contact number, etc. All of your Starbucks Cards and Starbucks e-Cards activated in India can be registered for use in My Starbucks Rewards™ under these Terms and Conditions. For ease of reference, in these Terms and Conditions, the term “Starbucks Card” refers to a Starbucks Card – physical or digital/virtual (Starbucks e-Card) – that may be activated in India only, either online or at a Starbucks store in India, and the term “activated, registered Starbucks Card” refers to a Starbucks Card that has been activated in India only with an initial card load amount of INR 200 (Rupees Two Hundred Only) and registered to your Starbucks Card account at  <a href="https://rewards.starbucks.in/" target="_blank">rewards/index.html</a> or on the Starbucks India mobile app.</p><p>My Starbucks Rewards™ benefits are determined based on the amount you spend at any Starbucks store in India and the number of “stars” that you earn through spending with your registered Starbucks Card(s). A “star” for purposes of My Starbucks Rewards™ means each time you use your registered Starbucks Card to pay for a purchase worth INR 300 (Rupees Three Hundred Only, incl. of taxes) on any food, beverage, merchandise, ready-to-drink (for example - juices, water, etc.) and ready-to-eat (for example packaged foods like chocolates, almonds, cashews, etc.) at a Starbucks store in India. No “star” will be rewarded for purchases made with a registered Starbucks Card in any Starbucks store outside India. For each qualified purchase, you will receive one (1) “star” for any purchase worth INR 300 (Rupees Three Hundred Only, inclusive of all taxes), at any Starbucks store in India, except during limited time promotions when Starbucks may offer “Bonus Stars” on featured products and/or services. stars are for promotional purposes only and have no cash value. You can use any registered Starbucks Card to earn stars for your spending at Starbucks stores in India. Please note that a member can only earn stars accumulated after the activated Starbucks Card is registered at <a href="https://rewards.starbucks.in/" target="_blank">rewards/index.html</a>. You can manage your account online at  <a href="https://rewards.starbucks.in/" target="_blank">rewards/index.html</a> or through the Starbucks India mobile app. You can track your rewards by signing into your account at  <a href="https://rewards.starbucks.in/" target="_blank">rewards/index.html</a> or or on the Starbucks India mobile app. Stars will not be credited on any purchase made through third party or delivery platforms.</p><h3>My Starbucks Rewards™ Levels</h3><p>Currently, there are three (3) levels in My Starbucks Rewards™ which are determined by the number of stars that you accumulate in your account over a 12-month period. By creating an account, activating and registering a Starbucks Card, you will be automatically enrolled in My Starbucks Rewards™ at the Welcome Level. Earn at least five (5) stars within the twelve (12) month period following the date you reach Welcome level and you will advance to the Green Level. If you earn at least twenty (20) stars within the 12-month period following the date you reach Green Level, you will qualify for the Gold Level.</p><p>Once you reach a specific level within My Starbucks Rewards™, you will receive the benefits that are applicable to that level only. However, you must continue to accumulate stars in order to maintain your level:</p><ol><li>To maintain the Welcome Level, you must earn at least one (1) new star during each consecutive 12-month period following the date you reach Welcome Level. If you do not obtain one (1) new star in 12 months from the enrolment date, you will no longer be eligible for the Welcome Level benefits of My Starbucks Rewards™ and your star balance will be reset to zero.
+<br /><br />
+If you earn less than one (1) star in your 12-month anniversary period, you will not receive Welcome Level benefits till the time you earn one (1) star again.
+<br /><br />
+At the Welcome Level, if you earn five (5) to twenty four (24) stars in your 12-month anniversary period you will be placed at the Green Level, and if you earn twenty five (25) stars in your 12-month anniversary period you will be placed at the Gold Level.</li><li>To maintain the Green Level, you must earn at least five (5) new stars during each consecutive 12-month period following the date you reached the Green Level. If you do not obtain 5 new stars in 12 months, you will be placed at the Welcome Level of My Starbucks Rewards™ and your star balance will be reset to zero.
+<br /><br />
+At the Green Level, if you earn less than or equal to four (4) stars in your 12-month anniversary period, you will be placed at the Welcome Level.
+<br /><br />
+At the Green Level, if you earn twenty (20) stars in your 12-month anniversary period you will be placed at the Gold Level.</li><li>To maintain the Gold Level, you must earn at least twenty five (25) new stars during each consecutive 12-month period following the date you reached the Gold Level. If you do not obtain 25 new stars in that 12-month period, you will be placed at the Green Level of My Starbucks Rewards™ and your star balance will be reset to zero.
+<br /><br />
+At the Gold Level, if you earn less than twenty five (25) stars in your 12-month anniversary you will be placed at the Green Level.</li></ol><p><strong>Please note that “stars” accumulated for each level will only be valid for twelve (12) months from the date you reach the particular level.</strong>For example: You activate a Starbucks Card at a Starbucks store in India on 2nd May 2013 by loading INR 200 (Rupees Two Hundred Only) onto the Starbucks Card. You register that Starbucks Card on 1st June 2013. Your spending will only be considered as a qualified purchase from 1st June 2013 and this is the date from when you can start earning stars. If you earn twenty five (25) stars on 15th June 2013, you will be placed on Gold Level and entitled to Gold Level benefits and your entitlement to Gold Level benefits will expire on 14th June 2014. On 15th June 2013, your star balance will reset to zero and you will be placed at Gold Level.</p><p>If you have accumulated twenty five (25) new stars between 15th June 2014 and 14th June 2015, thus earning the required number of stars to maintain your Gold Level, you will automatically be placed on the Gold Level and entitled to the various Gold Level benefits for the 12-month period between 15th June 2015 and 14th June 2016, and your star balance will be zero on your requalifying date. Your account will be updated within 24 hours of a level change or maintaining your level and you will be informed by email or through a mobile inbox message on the Starbucks India mobile app when you move to the next level or move down from a particular level.</p><h3>Welcome Level</h3><p>By opening an account, activating and registering your Starbucks Card, you automatically enter into the “Welcome Level” of My Starbucks Rewards™. Rewards may include:</p><ol><li>Birthday drink (Tall size handcrafted beverage): Free birthday drink (1) in the month of your birthday. Your complimentary birthday drink will be automatically loaded onto your account on the 1st day of your birthday month and will be available to you till the last day of your birthday month. This offer for the free drink expires after the last day of your birthday month. You must present your registered Starbucks Card to the store partner at a Starbucks store in India in order to redeem your reward and receive your complimentary birthday drink. You will receive only one complimentary birthday drink in a 12-month period regardless of the number of Starbucks Cards that you have registered to your account.</li><li>One (1) size upgrade on any handcrafted beverage upon registration: Your free beverage size upgrade reward will be automatically loaded onto your account upon registration of the first Starbucks Card under your account, and will be available to you for thirty (30) days from the date you reach Welcome Level. The offer for the Beverage Size Upgrade expires after thirty (30) days from the date you reach Welcome Level. You must present your registered Starbucks Card to the store partner at a Starbucks store in India in order to purchase any size beverage to enjoy the free upgrade reward (upgrade to the next larger size). In case you choose to redeem this reward on a Venti size beverage, you will receive a Venti size beverage and pay for the Grande size of the beverage until the time a larger size is available. You can also view and track your available rewards by signing into your account at  <a href="https://rewards.starbucks.in/" target="_blank">rewards/index.html</a>. or on the Starbucks India mobile app. You will receive only one size upgrade reward regardless of the number of Starbucks Cards that you have registered to your account. The Beverage Size Upgrade reward may be redeemed at any Starbucks store in India only. This reward is not available on featured beverages (A featured beverage is a beverage decided at the discretion of TSPL to be featured at the store). You can redeem this reward till the time it expires irrespective of the level you will be at, at the time of expiry.</li><li>Personalized offers and coupons: Special offers may be circulated to you by email or through the Starbucks India mobile app. You must opt-in to receive promotional and marketing offers from Starbucks and provide a valid email, contact number and postal address in order to receive your special offers. Special offers are a part of a personal marketing program and offers may be customized based on purchase behaviours and preferences. Special offers may include periodic discounts on beverages, bonus stars on purchase, etc. Special offers may have certain restrictions including expiry dates and short time-limited redemption periods. Special offers are personal to you and cannot be shared, copied or transferred. You may be required to present your registered Starbucks Card to the store partner in order to redeem special offers. Read each offer carefully for specific details, limitations and restrictions.</li></ol><h3>Green Level</h3><p>After having accumulated five (5) stars in a 12-month period, you advance from the Welcome Level to the Green Level of My Starbucks Rewards™. Rewards may include:</p><ol><li>Birthday drink (Tall size): Free birthday drink (1) in the month of the member’s birthday. Your complimentary birthday item will be automatically loaded onto your account on the 1st day of your birthday month and will be available to you till the end of your birthday month only. The offer for the free drink expires after the last date of your birthday month. You must present your registered Starbucks Card to the store partner at a Starbucks store in India in order to redeem your reward and receive your complimentary birthday drink. You will receive only one complimentary birthday drink in a 12-month period regardless of the number of Starbucks Cards that you have registered to your account.</li><li>One (1) free customization on any handcrafted beverage: Your free beverage customization reward will be automatically loaded onto your account; you can customize your handcrafted beverage with any one (1) modifier of your choice. This offer will be available to you the day you reach Green level and will expire after three (3) months from the date you reached the Green level. You must present any of your registered Starbucks Cards to the store partner at a Starbucks store in India in order to redeem this reward. You can also view and track your available Rewards by signing into your account at  <a href="https://rewards.starbucks.in/sign-in" target="_blank"style="font-weight: bold;">rewards.starbucks.in/sign-in</a> or on the Starbucks India mobile app. You will receive only one complimentary customization option of your choice when you reach Green Level regardless of the number of Starbucks Cards that you have registered to your account.
+<br /><br />
+You can redeem this reward till the time it expires, irrespective of the level you are at when it expires.</li><li>One (1) free customization on any handcrafted beverage: Your free beverage customization reward will be automatically loaded onto your account; you can customize your handcrafted beverage with any one (1) modifier of your choice. This offer will be available to you the day you reach the Green Level and will expire after three (3) months from the date you reached the Green Level. You must present any of your registered Starbucks Cards to the store partner at a Starbucks store in India in order to redeem this reward. You can also view and track your available rewards by signing into your account at  <a href="https://rewards.starbucks.in/" target="_blank">rewards/index.html</a> or on the Starbucks India mobile app. You will receive only one complimentary customization option of your choice when you reach Green Level regardless of the number of Starbucks Cards that you have registered to your account.</li><li style="list-style: none"><p>You can redeem this reward till the time it expires, irrespective of the level you are at when it expires.</p></li><li>One (1) free tall size handcrafted beverage on purchase of 250g whole bean coffee: Every time you purchase any 250g of whole bean coffee at a Starbucks store in India, a free tall size beverage will be loaded automatically onto your account. This offer will be available to you once you reach Green Level and this will need to be redeemed when buying the whole bean coffee at the same time and at the same store (this reward is applicable on the same transaction). You must present any of your registered Starbucks Cards to the store partner at a Starbucks store in India in order to redeem this reward. You can also view and track your available rewards by signing into your account at <a href="https://rewards.starbucks.in/" target="_blank">rewards/index.html</a>. or on the Starbucks India mobile app. You will receive one free tall size beverage for each 250g of whole bean coffee you buy when you reach Green Level regardless of the number of Starbucks Cards that you have registered to your account. For instance, if you buy two (2) 250g packets of whole bean coffee, you will receive two complementary tall size beverages.</li><li>One (1) free size upgrade on one featured beverage: This benefit is only available when TSPL launches a specific featured beverage across Starbucks stores in India. You may use any of your registered Starbucks Cards to purchase any size featured beverage to enjoy one (1) free size upgrade (to the next larger size) during the first two (2) weeks of its launch at a Starbucks store in India. This offer will be available to you once you reach the Green Level and will expire within 2 weeks post launch of the featured beverage. You must present your registered Starbucks Card to the store partner at a Starbucks store in India in order to redeem your free upgrade on a featured beverage. In case you choose to redeem this reward on a Venti size beverage, you will receive a Venti size beverage and pay for the Grande size of the beverage until the time a larger size is introduced. You can also view and track your available rewards by signing into your account at <a href="https://rewards.starbucks.in/" target="_blank">rewards/index.html</a>. or on the Starbucks India mobile app. The free size upgrade on the featured beverage may be redeemed at any Starbucks stores in India only. For example, if a new promotion starts in the store on 5th May, the customer will have to visit any store till the midnight of 18th May to redeem this offer, post 18th May this offer will expire. A featured beverage is a beverage decided at the discretion of TSPL to be featured at the store.</li><li>Additional personalized offers and coupons: Special offers may be distributed by email or through the Starbucks India mobile app. You must opt-in to receive promotional and marketing offers from TSPL and provide a valid email, contact number and postal address in order to receive your special offers. Special offers are a part of a personal marketing program and offers may be customized based on purchase behaviours and preferences. Special offers may include periodic discounts on beverages, bonus stars on purchase etc. Special offers may have certain restrictions including expiry dates and short, time-limited redemption periods. Special offers are personal to you and cannot be shared, copied or transferred. You may be required to present your registered Starbucks Card to the store partner in order to redeem special offers. Read each offer carefully for specific details, limitations and restrictions.</li></ol><h3>Gold Level</h3><p>After having accumulated twenty five (25) stars over a 12-month period, you reach the Gold Level. The benefits for Gold Level may include:</p><ol><li>Birthday drink (Tall size): Free birthday drink (1) in the month of the member’s birthday. Your complimentary birthday item will be automatically loaded onto your account on the 1st day of your birthday month and will be available to you till the end of your birthday month only. The offer for a free drink expires after the last date of your birthday month. You must present your registered Starbucks Card to the store partner at a Starbucks store in India in order to redeem your reward and receive your complementary birthday drink. You will receive only one complementary birthday drink during a 12-month period regardless of the number of Starbucks Cards that you have registered to your account.</li><li>Two (2) free beverage customizations on any handcrafted beverage: Your two (2) free beverage customizations reward will be automatically loaded onto your account when you reach Gold Level and will expire 12 months after you have reached this level (your gold anniversary date). With this reward you can customize your handcrafted beverage with any modifier of your choice. You must present any of your registered Starbucks Cards to the store partner at a Starbucks store in India store in order to redeem this reward. You can also view and track your available rewards by signing into your account at  <a href="https://rewards.starbucks.in/" target="_blank">rewards/index.html</a>. or on the Starbucks India mobile app. You will receive only two complimentary customizations option of your choice when you reach Gold Level regardless of the number of Starbucks Cards that you have registered to your account. Members may only redeem one customization on one beverage at a time.</li><li>One (1) free tall size handcrafted beverage on purchase of one pack of 250g of whole bean coffee: Every time you purchase a packet of 250g of any whole bean coffee at a Starbucks store in India, your free tall size beverage will be loaded automatically onto your account. This offer will be available to you once you reach the Gold Level and will need to be redeemed when buying the whole bean coffee at the same time and at the same store (this reward is applicable on the same transaction). You must present any of your registered Starbucks Cards to the store partner at a Starbucks store in India in order to redeem this reward. You can also view and track your available rewards by signing into your account at  <a href="https://rewards.starbucks.in/" target="_blank">rewards/index.html</a> or on the Starbucks India mobile app. You will receive one free tall size beverage for each 250g of whole bean coffee you buy when you reach the Gold Level regardless of the number of Starbucks Cards that you have registered to your account. For instance, if you buy two (2) packs of 250g of whole bean coffee, you will receive two complementary tall size hot beverages.</li><li>One (1) free size upgrade on one featured beverage: This benefit is only available when TSPL launches a specific featured beverage across Starbucks stores in India. You may use any of your registered Starbucks Cards to purchase any size featured beverage to enjoy one (1) free size upgrade (to the next larger size) during the first two (2) weeks of its launch at a Starbucks store in India. This offer will be available to you once you reach the Gold Level and will expire two weeks post launch of the featured beverage. In case you choose to redeem this reward on a Venti size beverage, you will receive a Venti size beverage and pay for the Grande size of the beverage until the time a larger size is introduced. You must present your registered Starbucks Card to the store partner at a Starbucks store in India in order to redeem your free upgrade on a featured beverage. You can view and track your available rewards on  <a href="https://rewards.starbucks.in/" target="_blank">rewards/index.html</a> or on the Starbucks India mobile app. The free upgrade on the featured beverage may be redeemed at any Starbucks store in India only. For example, if a new promotion starts in the store on 5th May, the customer will have to visit any store till midnight of 18th May to redeem this offer, post 18th May this offer will expire. A featured beverage is a beverage decided at the discretion of TSPL to be featured at the store.</li><li>Free tall size handcrafted beverage after every 10 additional stars earned: Once you reach the Gold Level, you will earn a free Tall size handcrafted beverage after every ten (10) additional stars. This reward will be automatically loaded onto your account every time you earn ten (10) additional stars and will expire within three (3) months from the date you receive the 10th star. You must present your registered Starbucks Card to the store partner at Starbucks store in India in order to redeem your reward and receive your complementary handcrafted beverage of your choice. You can redeem any earned reward that has not expired irrespective of the level you are at.</li><li>Additional personalized offers and coupons: Special offers may be distributed by email. You must opt-in to receive promotional and marketing offers from Starbucks and provide a valid email, contact number and postal address in order to receive your special offers. Special offers are a part of a personal marketing program and offers may be customized based on purchase behaviours and preferences. Special offers may include periodic discounts on beverages, bonus stars on purchase, etc. Special offers may have certain restrictions including expiration dates and short, time-limited redemption periods. Special offers are personal to you and cannot be shared, copied or transferred. You may be required to present your registered Starbucks Card to the store partner in order to redeem special offers. Read each offer carefully for specific details, limitations and restrictions.</li></ol><p>Please note: Due to unforeseen circumstances, we have stopped the production of physical gold cards. We however assure you that your benefits continue and you can avail of the same by using the e-gold card that is already available on your registered account.</p><h3>Rules related to offers at Welcome, Green, Gold levels</h3><ul class="basic"><li>In case you have registered your Starbucks Card prior to the launch of this My Starbucks Rewards™ program then benefits of My Starbucks Rewards™ will be available to you from the day the program has launched.</li><li>During your 12 (twelve) month anniversary period, you will receive only (one) 1 free Tall size birthday drink as long as you are at either Welcome Level, or Green Level or Gold Level.</li><li>Birthday reward: will be available to you only in your birthday month at each level of the program.</li><li>Other than the Birthday Reward, all other rewards at various levels: If you don’t redeem your offers at a particular level and move to the next level or move down from a particular level, you can still redeem the previous level’s offers, if those offers have not expired as per their respective expiry period. You can’t redeem multiple offers on the same beverage purchased irrespective of the level you are at.</li><li>If TSPL runs a promotion offering Bonus Stars to members, the member must use only one (1) registered Starbucks card to complete that transaction and receive the Bonus Stars offered. If the member uses more than one (1) registered Starbucks card to complete that transaction, the member will not receive ANY of the Bonus Stars for that transaction.</li><li>A member can only redeem one beverage customization offer on a single beverage (applicable for Green Level and Gold Level members).</li><li>All rewards expire at midnight (at 00:00 hours) on the date of expiry of the reward.</li></ul><h3>Miscellaneous</h3><ul class="basic"><li>These My Starbucks Rewards™ Terms &amp; Conditions complement and incorporate by reference the Starbucks Card Terms and Conditions. In the event of any conflict between the Starbucks Card Terms and Conditions and these My Starbucks Rewards™ Terms of Use, the Starbucks Card Terms and Conditions prevail.</li><li>Without notice to you, TSPL reserves the right to suspend any Starbucks Card and/or terminate your account and/or your participation in My Starbucks Rewards™ if TSPL determines in its sole discretion that you have violated these Terms &amp; Conditions, you have more than one (1) account, or that the use of your account is unauthorized, deceptive, fraudulent or otherwise unlawful. TSPL may, in its sole discretion, suspend, cancel or combine accounts that appear to be duplicative. In the event that your participation in My Starbucks Rewards™ is terminated, then all accumulated Stars in your account are void.</li><li>Without notice to you, TSPL also reserves the right to “unregister" and make ineligible for the My Starbucks Rewards™ program any Starbucks Card or account that has been inactive for two (2) consecutive years. Inactive is defined as no stars earned. In the event that your Starbucks Card or account is unregistered or rendered inactive, then all accumulated stars in your account are void.</li><li>TSPL reserves the right to terminate, discontinue or cancel the My Starbucks Rewards™ program at any time and in its sole discretion without notice to you.</li><li>There are no membership fees associated with My Starbucks Rewards™. Stars accumulated under the program have no cash value and can’t be exchanged for cash.</li><li>TSPL may introduce promotion programs relating to My Starbucks Rewards™ whereby these Terms and Conditions may be varied as applicable to such programs. Your stars, benefits, registered Starbucks Card(s), and your account under My Starbucks Rewards™ are personal to you, and except expressly permitted under these Terms and Conditions or the rules of a promotional programme, may not be sold, transferred or assigned to, or shared with family, friends or others. TSPL reserves the right to terminate your account and/or your participation in My Starbucks Rewards™ if TSPL determines in its sole discretion that you have violated these Terms and Conditions, or that the use of your account is unauthorized, fraudulent or otherwise unlawful. TSPL reserves the right to terminate, discontinue, modify or cancel My Starbucks Rewards™ at any time and in its sole discretion without notice to you.</li><li>You authorize TSPL to disclose your information registered on our site <a href="../../index.html">www.starbucks.in</a> or on the Starbucks India mobile app, to Government authorities or to competent authorities or to credit bureaus or to the third persons, to comply with its obligations under law. Further, you also authorize TSPL to use your information for offering products and services to you, including from its associate /partners, unless specified otherwise.</li><li>No claims of whatsoever nature arising out of My Starbucks Rewards™ shall be entertained by TSPL.</li><li>TSPL will not be responsible for any loss of rewards or stars due to loss or misuse of Starbucks Card.</li><li>You are solely responsible to check that your star balance and transactions have been properly credited to your account. No request for retrospective credit of stars will be entertained unless otherwise specified.</li><li>All disputes in connection with My Starbucks Rewards™ shall be governed and construed in accordance with Indian laws and are subject to the exclusive jurisdiction of Competent Courts at Mumbai only.</li><li>Further, Starbucks Card terms and conditions and Privacy Policy are applicable to the said program. Please refer to the links:<span style="display: block;"><a href="../card-terms-and-conditions.html">http://www.starbucks.in/card/card-terms-and-conditions</a></span><span><a href="../../about-us/company-information/online-policies/privacy-statement.html">http://www.starbucks.in/about-us/company-information/online-policies/privacy-statement</a></span></li></ul><h3>Copyright and Limited License</h3><ul class="basic"><li>Unless otherwise indicated, the sites and all content and other materials therein, including, without limitation, the Starbucks logo, TATA logo and all designs, text, graphics, pictures, information, data, software, sound files, other files and the selection and arrangement thereof (collectively, "Site Materials") are the proprietary property of the Company or its licensors or users and are protected by Indian and international copyright laws.</li><li>You are granted a limited, non-sublicensable license to access and use the sites and site materials for personal, informational and shopping purposes only. Such license is subject to the Terms of Use and does not include: (a) any resale or commercial use of the sites and site materials; (b) the collection and use of any product listings, pictures or descriptions; (c) the distribution, public performance or public display of any site materials; (d) modifying or otherwise making any derivative uses of the sites and site materials, or any portion thereof; (e) use of any data mining, robots or similar data gathering or extraction methods; (f) downloading (other than the page caching) of any portion of the sites, site materials or any information contained therein, except as expressly permitted on the sites; or (g) any use of the sites or the site materials other than for its intended purpose. Any use of the sites or site materials other than as specifically authorized herein, without the prior written permission of the Company, is strictly prohibited and will terminate the license granted herein. Such unauthorized use may also violate applicable laws, including, without limitation, copyright and trademark laws and applicable communications regulations and statutes. Unless explicitly stated herein, nothing in these Terms of Use shall be construed as conferring in any manner, whether by implication, estoppel or otherwise, any title or ownership of, or exclusive use-rights to, any intellectual property or other right and any goodwill associated therewith.</li></ul><h3>Copyright Notice</h3><ul class="basic"><li>If you believe any material available via the sites infringes a copyright you own or control, you may file a notification of such infringement at our contact details given below.</li></ul><h3>Trademark Information</h3><ul class="basic"><li>The “Starbucks,” “Starbucks Coffee” and Siren Logo trademarks are owned by Starbucks Corporation and used by the Company under a license. The “TATA” mark and logo are owned by Tata Sons Limited and are used by the Company under a license from Tata Sons Limited. All other trademarks, service marks, domain names, logos, company names and indicia of origin referred to on the Sites are either trademarks, service marks, domain names, logos, company names or indicia of origin or are otherwise the property of the Company or its affiliates or licensors. Other product or company names referred to on the Sites may be trademarks of their respective owners. You may not use any trademark, service mark, domain name, logo, company name, trade name or indicia of origin of the Company, Starbucks Corporation, Tata Sons Limited or any third party without permission from the owner of the applicable trademark, service mark, domain name, logo, company name, trade name or indicia of origin. You may contact the Company by sending an e-mail to Customer Care or writing to Tata Starbucks Private Limited, Customer Care, 4th Floor, New Excelsior Building, Amrit Keshav Nayak Marg, Fort, Mumbai – 400 001 to request written permission to use trademarks, indicia of origin and materials on the Sites for purposes other than stated in these Terms of Use or for all other questions relating to the Sites.</li><li>All rights not expressly granted are reserved.</li><li>Any Customer’s personal data provided by Customer to TSPL in connection with the My Starbucks Rewards™ program shall be kept confidential except to any activities mentioned thereto. Starbucks India shall take all reasonable precautions to preserve the integrity and prevent any corruption or loss, damage or destruction of Customer Personal Data.</li><li>In case of any queries please send us an email at <a href="mailto:customercare@tatastarbucks.com">customercare@tatastarbucks.com</a> or call us on 18602660010 or write to us at Tower C, 2nd Floor, Times Square, Andheri Kurla Road, Gamdevi, Marol, Andheri (East), Mumbai - 400059.</li></ul>
+            </div>
+            </div>   
+</article>
+
+    <!-- END: Main Region Content -->
+</div>
+<!-- END: Main Region -->
+            
+        </div>
+        
+    </div>
+    
+</main>
+<!-- BEGIN: Pre-Footer Region -->
+<div class="container">
+    <div class="grid">
+        <div class="column size12of12" typeof="Region" resource="PreFooter">
+            <!-- BEGIN: Pre-Footer Region Content -->
+            <div >
+        <ul class="breadcrumb" id="breadcrumb">
+                    <li class="breadcrumb__item"><a class="breadcrumb__link" href="https://card.starbucks.in/">Card</a></li>
+                    <li class="breadcrumb__item"><a class="breadcrumb__link" href="../rewards.html">My Starbucks Rewards</a></li>
+                            <li class="breadcrumb__item">Rewards Program Terms and Conditions</li>
+        </ul>
+</div>
+
+            <!-- END: Pre-Footer Region Content -->
+        </div>
+    </div>
+</div>
+<!-- END: Pre-Footer Region -->
+<footer id="footer" tabindex="0" class="footer">
+    <div class="footer-top">
+        
+    <div class="container" >
+    <div class="grid">
+        <ul class="sb-social-icons column size12of12 med_size4of12 ">
+                    <li class="facebook">
+                        <a href="https://www.facebook.com/starbucksindia"  title="Facebook">
+                            <span class="hidden_visually">Facebook</span>
+                        </a>
+                    </li>
+                    <li class="twitter">
+                        <a href="https://twitter.com/starbucksindia"  title="Twitter">
+                            <span class="hidden_visually">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="instagram">
+                        <a href="https://www.instagram.com/starbucksindia"  title="Instagram">
+                            <span class="hidden_visually">Instagram</span>
+                        </a>
+                    </li>
+        </ul>
+
+        
+    </div>
+</div>
+
+    </div>
+    <div class="footer-main">
+        <div class="container" >
+            <div class="grid">
+                
+<style>
+    @media (min-width: 768px) {
+        .footer_global {
+            background-image: url(../../media/wordmark_footer_tcm87-397.png);
+        }
+    }
+</style>
+
+
+
+                <div class="footer_global accordion">
+                    
+<div class="info_block column size12of12 med_size4of12 lg_size2of12" >
+        <h4 >
+                <a href="../../about-us.html" title="About Us" >
+                    About Us
+                </a>
+            <label for="footer_link_group_1c7bc2f4-3903-4c4d-9bb0-7e204cecf1dd" data-icon="&#x2304" tabindex="0"></label>
+        </h4>
+        <input id="footer_link_group_1c7bc2f4-3903-4c4d-9bb0-7e204cecf1dd" name="footer" type="radio" aria-hidden="true" />
+            <ol>
+                    <li >
+                        <a href="../../about-us/our-heritage.html" title="Our HeritageInvestor Relations" >Our Heritage</a>
+                    </li>
+                    <li >
+                        <a href="../../about-us/company-information.html" title="Our Company" >Our Company</a>
+                    </li>
+            </ol>
+</div>
+<div class="info_block column size12of12 med_size4of12 lg_size2of12" >
+        <h4 >
+                <a href="customer-service.html" title="Customer Service" >
+                    Customer Service
+                </a>
+            <label for="footer_link_group_32d82e4c-18be-4cd6-8efc-7040f2c23217" data-icon="&#x2304" tabindex="0"></label>
+        </h4>
+        <input id="footer_link_group_32d82e4c-18be-4cd6-8efc-7040f2c23217" name="footer" type="radio" aria-hidden="true" />
+            <ol>
+                    <li >
+                        <a href="../../customer-service/frequently-asked-questions.html" title="Frequently Asked QuestionsWorking at Starbucks" >Frequently Asked Questions</a>
+                    </li>
+            </ol>
+</div>
+<div class="info_block column size12of12 med_size4of12 lg_size2of12" >
+        <h4 >
+Quick Links            <label for="footer_link_group_3343e8e1-a34b-4217-8f57-25172582be2a" data-icon="&#x2304" tabindex="0"></label>
+        </h4>
+        <input id="footer_link_group_3343e8e1-a34b-4217-8f57-25172582be2a" name="footer" type="radio" aria-hidden="true" />
+            <ol>
+                    <li >
+                        <a href="https://rewards.starbucks.in/store-locator" target="_blank" title="Store Locator" >Store Locator</a>
+                    </li>
+            </ol>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="grid">
+                
+
+<div class="column size12of12" >
+    <ul class="footer_sub">
+                <li >
+                    <a href="../../about-us/company-information/online-policies/web-accessibility.html" title="Web Accessiblity" >Web Accessiblity</a>
+                </li>
+                <li >
+                    <a href="../learn-more/privacy-policy.html" title="Privacy Statement" >Privacy Statement</a>
+                </li>
+                <li >
+                    <a href="../../about-us/company-information/online-policies/terms-of-use.html" title="Terms of Use" target="_self">Terms of Use</a>
+                </li>
+                <li >
+                    <a href="../../site-map.html" title="Site Map" >Site Map</a>
+                </li>
+                <li >
+                    <a href="customer-service.html" title="Contact Us" >Contact Us</a>
+                </li>
+    </ul>
+    <div id="teconsent" class="teconsent_showBorder">
+            <script async="async" type="text/javascript" src="http://consent.truste.com/notice?domain=starbucks.com&amp;c=teconsent&amp;text=true&amp;js=nj&amp;noticeType=bb&amp;country=in&amp;language=en" crossorigin></script>
+    </div>
+</div>
+
+<div class="column size12of12" >
+        <p class="footer_copyright" >&#169; 2022 Starbucks Coffee Company. All rights reserved.</p>
+</div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+    
+
+    <!-- BEGIN: Bottom JavaScript -->
+    
+    <script src="https://www.starbucks.in/ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../static/js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
+
+<script type="text/javascript" src="../../static/js/framework.js"></script>
+    <script>
+    sb.namespace("config");
+    
+    sb.config.globalTextResources = {
+        closeButtonText: 'Close'
+    };
+</script>
+
+
+    
+
+    <script type="text/javascript" src="../../static/js/main.js"></script>
+    <script type="text/javascript" src="../../static/js/our-coffees.js"></script>
+    <!-- END: Bottom JavaScript -->
+</body>
+</html>

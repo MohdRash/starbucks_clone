@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<path opacity="0.4" fill="#FFFFFF" d="M32,2C15.432,2,2,15.432,2,32s13.432,30,30,30s30-13.432,30-30S48.568,2,32,2z M32,58
+	C17.641,58,6,46.359,6,32S17.641,6,32,6s26,11.641,26,26S46.359,58,32,58z"/>
+<path opacity="0.8" fill="#0F0F0F" d="M32,6C17.641,6,6,17.641,6,32s11.641,26,26,26s26-11.641,26-26S46.359,6,32,6z M27.789,44.182
+	V19.819L41.711,32L27.789,44.182z"/>
+<polygon fill="#FFFFFF" points="27.789,44.182 41.711,32 27.789,19.819 "/>
+</svg>

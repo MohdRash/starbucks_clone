@@ -1,0 +1,632 @@
+
+<!DOCTYPE html>
+<!--[if IE 6]><html id="ie6" class="ie9 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]-->
+<!--[if IE 7]><html id="ie7" class="ie9 lt-ie10 lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if IE 8]><html id="ie8" class="ie8 lt-ie10 lt-ie9" lang="en"><![endif]-->
+<!--[if IE 9]><html id="ie9" class="ie9 lt-ie10"lang="en"><![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"671cca5e0f","applicationID":"899226958","transactionName":"NQMBZkJRXEAEAhJQCgxJLmRzH2JSAgQlVgsWFAxeXFVAHDUAAVw=","queueTime":0,"applicationTime":171,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"671cca5e0f",applicationID:"899226958"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https:///")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    
+<title>Privacy Policy | Starbucks Coffee Company</title>
+
+    <!-- BEGIN: MetaData -->
+    
+            <meta name="twitter:card" content="summary">
+            <meta property="og:title" content="Privacy Policy" />
+            <meta property="og:type" content="article" />
+            <meta property="og:locale" content="en" />
+            <meta name="description" content="Privacy Policy">
+            <meta property="og:description" content="Privacy Policy" />
+<meta property="og:url" content="card/learn-more/privacy-policy" />
+    <meta property="og:site_name" content="Starbucks Coffee Company" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- END: MetaData -->
+    <!-- BEGIN: CSS -->
+        <link href="http://fonts.googleapis.com/css?family=Lato:400,700|Crete+Round:400,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../../static/css/main.css">
+    
+    <!-- END: CSS -->
+    <!-- BEGIN: Favicons -->
+    <link rel="shortcut icon" type="image/x-icon" href="../../static/images/favicon.ico" />
+<link rel="apple-touch-icon" href="../../static/images/touch-icon-iphone.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="../../static/images/touch-icon-ipad.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="../../static/images/touch-icon-iphone4.png" />
+    <!-- END: Favicons -->
+    <!-- BEGIN: Top JavaScript -->
+    <script type="text/javascript" src="../../static/js/vendor/modernizr.min.js"></script>
+<script>
+    document.createElement("picture");
+</script>
+<script src="../../static/js/vendor/picturefill.min.js" async></script>
+    
+    <!-- END: Top JavaScript -->
+</head>
+<body>
+    
+<!--[if lte IE 8]>
+<aside class="notificationBar notificationBar--oldBrowser">
+    <div >
+        <section class="validation">
+            <div class="validation_summary warning">
+                <h2 class="validation_summary_title" >You may want to update your browser</h2>
+                <div >
+                    <p>You’re using an older browser. Starbucks will work better for you if you <a href="http://windows.microsoft.com/en-gb/internet-explorer/download-ie">upgrade your browser</a> or switch to another browser.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</aside>
+<![endif]-->
+
+<div id="consent_blackbar"></div>
+
+<aside class="notificationBar notificationBar--shop">
+</aside>
+
+<header class="header_container">
+    <div class="container">
+        <div class="grid">
+            <div class="column size12of12">
+                <div class="" id="header">
+                    <ul class="skip">
+                        <li><a href="privacy-policy.html#nav">skip to Main Navigation</a></li>
+                        <li><a href="privacy-policy.html#content">skip to Main Content</a></li>
+                        <li><a href="privacy-policy.html#footer">skip to Footer</a></li>
+                    </ul>
+                    <div >
+        <a href="../../index.html" id="logo" rel="home" title="Starbucks Logo"  >
+<img src="../../media/logo_tcm87-366_w1024_n.png" alt="Logo" data-aspect="0" class="logo" />        </a>
+</div>
+
+                    <div id="utilities" >
+        <ul class="utility_list">
+                        <li class="utility_link store_locator">
+                            <a href="https://rewards.starbucks.in/store-locator" target="_blank" title="Find A Store"  ><span aria-hidden="true" data-icon="&#x272a"></span><span class="hidden_visually med_render_visually">Find A Store</span></a>
+                        </li>
+        </ul>
+</div>
+
+                    <nav id="nav" >
+    <div class="nav_control">
+        <a href="privacy-policy.html#nav">
+            <span class="hamburger"></span>
+            <span class="hidden_visually">Navigation</span>
+        </a>
+    </div>
+    <div class="nav_menu">
+            <ul>
+                    <li id="nav_0">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../../coffee.html"><strong>Coffee</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_1">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../../menu-list.html"><strong>Menu</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_2">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../../coffeehouse.html"><strong>Coffeehouse</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_3">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../../responsibility.html"><strong>Responsibility</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_4">
+                        <div class="null_left"></div>
+                            <a class="tab" href="https://rewards.starbucks.in/" target="_blank"><strong>Rewards</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_5">
+                        <div class="null_left"></div>
+                            <a class="tab" href="https://careers.starbucks.in/" target="_blank"><strong>Careers</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_6">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../../Starbucks-Seasons-Gifting.html"><strong>Starbucks Season&#39;s Gifting</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_7">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../../starbucks-delivers.html"><strong>Starbucks Delivers</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_8">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../../about-us.html"><strong>About Us</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+            </ul>
+    </div>
+</nav>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="menus" class="megaNav">
+        <ol class="container">
+                <li class="fields" id="menu_0">
+                        <div class="region size4of5 menu_content">
+                            <ol class="blocks blocks-four-up">
+                                    <li>
+                                        <p>
+                                                <a href="../../coffee/our-coffees.html">Our Coffees</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../../coffee/our-coffees/format/via.html">Starbucks VIA&#174;</a></li>
+                                                    <li><a href="../../coffee/our-coffees/format/whole-bean.html">Whole Bean Coffee</a></li>
+                                                    <li><a href="../../coffee/our-coffees/view-all-coffees.html">View All Coffees</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../coffee/finder.html">Find Your Perfect Coffee</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../coffee/espresso.html">Espresso</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../../coffee/espresso/ingredients.html">The Ingredients</a></li>
+                                                    <li><a href="../../coffee/espresso/best-equipment.html">The Best Equipment</a></li>
+                                                    <li><a href="../../coffee/espresso/who-makes-it.html">Who Makes It</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../coffee/how-to-brew.html">How to Brew Great Coffee</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/coffee/how-to-brew/coffee-press.html">Coffee Press</a></li>
+                                                    <li><a href="https://www.starbucks.in/coffee/how-to-brew/pour-over.html">Pour-Over</a></li>
+                                                    <li><a href="https://www.starbucks.in/coffee/how-to-brew/iced-pour-over.html">Iced Pour-Over</a></li>
+                                                    <li><a href="https://www.starbucks.in/coffee/how-to-brew/coffee-brewer.html">Coffee Brewer</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../coffee/ethical-sourcing.html">Ethical Sourcing</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/coffee-sourcing.html">Coffee</a></li>
+                                                    <li><a href="../../coffee/ethical-sourcing/coffee-quality.html">Coffee Quality</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/farmer-support.html">Farmer Support</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../rewards/customer-service.html">Learn More</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../../coffee/learn/roast.html">Starbucks Roast Spectrum</a></li>
+                                                    <li><a href="../../coffee/learn/coffee-form.html">Coffee by Form</a></li>
+                                                    <li><a href="../../coffee/learn/flavors-in-your-cup.html">Flavors in Your Cup</a></li>
+                                                    <li><a href="../../coffee/learn/coffee-faqs.html">Coffee FAQ</a></li>
+                                            </ol>
+                                    </li>
+                            </ol>
+                                <p class="menu_suggestion_title">
+Looking for Coffee Beverages?                                </p>
+                                    <ul class="menu_suggestion_links">
+                                            <li class="navGroup_menu_sugList_item">
+                                                    <a class="link" href="https://www.starbucks.in/menu-list/drinks/index.html"  >Drinks</a>
+                                            </li>
+                                    </ul>
+                        </div>
+                            <div class="region size1of5 menu_promo">
+                                    <div class="anchor">
+                                        
+                                    </div>
+                            </div>
+                </li>
+                <li class="fields" id="menu_1">
+                        <div class="region size4of5 menu_content">
+                            <ol class="blocks blocks-four-up">
+                                    <li>
+                                        <p>
+                                                <a href="../../menu-list/drinks.html">Drinks</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Featured_Beverages.html">Featured Beverages</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Espresso_Beverages.html">Espresso</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Freshly_Brewed_Coffee.html">Freshly Brewed Coffee</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Coffee_Frappuccino.html">Coffee Frappuccino&#174;</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Creme_Frappuccino.html">Cr&#232;me Frappuccino&#174;</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Other_Beverages.html">Other Beverages</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Cold_Brew.html">Cold Brew</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Teavana_Tea.html">Teavana&#174; Tea</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Iced_Shaken.html">Iced Shaken</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../menu-list/food-list.html">Food</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../../menu-list/food-list/featured-food.html">Featured Food</a></li>
+                                                    <li><a href="../../menu-list/food-list/Sweet_Bakery_Food.html">Sweet Bakery</a></li>
+                                                    <li><a href="../../menu-list/food-list/Savoury_Bakery_food.html">Savoury Bakery</a></li>
+                                                    <li><a href="../../menu-list/food-list/Sandwiches_Wraps.html">Sandwiches &amp; Wraps</a></li>
+                                                    <li><a href="../../menu-list/food-list/Salads_Muesli.html">Salads &amp; Muesli</a></li>
+                                                    <li><a href="../../menu-list/food-list/Desserts.html">Desserts</a></li>
+                                            </ol>
+                                    </li>
+                            </ol>
+                                <p class="menu_suggestion_title">
+                                </p>
+                        </div>
+                            <div class="region size1of5 menu_promo">
+                                    <div class="anchor">
+                                        
+                                    </div>
+                            </div>
+                </li>
+                <li class="fields" id="menu_2">
+                        <div class="region size4of5 menu_content">
+                            <ol class="blocks blocks-four-up">
+                                    <li>
+                                        <p>
+                                                <a href="../../coffeehouse/wireless-internet.html">Wireless Internet</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../store-locator/search.html">Store Locations</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../coffeehouse/store-design.html">Store Design</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../../coffeehouse/store-design/fort-mumbai.html">Fort – Mumbai</a></li>
+                                                    <li><a href="../../coffeehouse/store-design/indiranagar-bangalore.html">Indiranagar Bangalore</a></li>
+                                                    <li><a href="../../coffeehouse/store-design/koregaon-park-pune.html">Koregaon Park Pune</a></li>
+                                                    <li><a href="../../coffeehouse/store-design/hamilton-house-delhi.html">Hamilton House Delhi</a></li>
+                                                    <li><a href="../../coffeehouse/store-design/jubiliee-hills-hyderabad.html">Jubiliee Hills Hyderabad</a></li>
+                                                    <li><a href="../../coffeehouse/store-design/phoenix-market-city-chennai.html">Phoenix Market City Chennai</a></li>
+                                                    <li><a href="../../coffeehouse/store-design/park-mansions-kolkata.html">Park Mansions Kolkata</a></li>
+                                            </ol>
+                                    </li>
+                            </ol>
+                                <p class="menu_suggestion_title">
+                                </p>
+                        </div>
+                            <div class="region size1of5 menu_promo">
+                                    <a href="../mobile_application_campaign.html"  >
+                                                <p><img src="../../media/promomobile_tcm87-27713.png" alt="Starbucks app on mobile device" /></p>
+        <p><strong>Starbucks&#174; India Mobile app</strong></p>
+        <p>Scan, pay and earn rewards. It’s that simple. Get our mobile app today!</p>
+
+                                    </a>
+                            </div>
+                </li>
+                <li class="fields" id="menu_3">
+                        <div class="region size4of5 menu_content">
+                            <ol class="blocks blocks-four-up">
+                                    <li>
+                                        <p>
+                                                <a href="https://www.starbucks.in/responsibility/community.html">Community</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/responsibility/community/local-area-engagement.html">Local Area Engagement</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/community/Empowering-Girls-And-Young-Women.html">Empowering Girls And Young Women</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/community/swastha.html">Swastha</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/community/chai-project.html">Chai Project</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="https://www.starbucks.in/responsibility/ethical-sourcing.html">Ethical Sourcing</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/coffee-sourcing.html">Coffee Sourcing</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/farmer-support.html">Farmer Support</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/tea-sourcing.html">Tea Sourcing</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/cocoa-sourcing.html">Cocoa Sourcing</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="https://www.starbucks.in/responsibility/environment.html">Environment</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/responsibility/environment/recycling.html">Recycling</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/environment/energy.html">Energy</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/environment/water.html">Water</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/environment/green-building.html">Green Building</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/environment/climate-change.html">Climate Change</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="https://www.starbucks.in/responsibility/diversity.html">Diversity</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../rewards/customer-service.html">Learn More</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/responsibility/learn-more/shared-planet.html">Starbucks Shared Planet</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/learn-more/policies.html">Policies</a></li>
+                                            </ol>
+                                    </li>
+                            </ol>
+                                <p class="menu_suggestion_title">
+                                </p>
+                        </div>
+                            <div class="region size1of5 menu_promo">
+                                    <div class="anchor">
+                                        
+                                    </div>
+                            </div>
+                </li>
+                <li class="fields" id="menu_4">
+                </li>
+                <li class="fields" id="menu_5">
+                </li>
+                <li class="fields" id="menu_6">
+                </li>
+                <li class="fields" id="menu_7">
+                </li>
+                <li class="fields" id="menu_8">
+                        <div class="region size4of5 menu_content">
+                            <ol class="blocks blocks-four-up">
+                                    <li>
+                                        <p>
+                                                <a href="../../about-us/our-heritage.html">Our Heritage</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../about-us/company-information.html">Our Company</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../../about-us/company-information/mission-statement.html">Mission Statement</a></li>
+                                                    <li><a href="../../about-us/company-information/newsroom.html">Starbucks Newsroom</a></li>
+                                                    <li><a href="../../about-us/company-information/business-ethics-and-compliance.html">Business Ethics and Compliance</a></li>
+                                                    <li><a href="../../about-us/company-information/online-policies.html">Online Policies</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                 <a href="https://careers.starbucks.in/" target="_blank">Career Center</a>
+                                        </p>
+                                    </li>
+                            </ol>
+                                <p class="menu_suggestion_title">
+                                </p>
+                        </div>
+                            <div class="region size1of5 menu_promo">
+                                    <div class="anchor">
+                                        
+                                    </div>
+                            </div>
+                </li>
+        </ol>
+</div>
+
+
+
+
+<main class="main" id="main">
+    <div class="container">
+        
+        <div class="grid">
+            
+
+<!-- BEGIN: Main Region -->
+
+<div class="column lg_size8of12" typeof="Region" resource="Main">
+    <!-- BEGIN: Main Region Content -->
+<article class="articleBlock" >
+        <h1 class="articleBlock__header" > Privacy Policy</h1>
+            <div class="articleBlock__text rtf">
+                    <div >
+                <p>Tata Starbucks Private Limited (“Tata Starbucks” or “we”) takes the privacy of your information seriously. This Privacy Notice describes the types of personal 
+				information we collect from you through our stores, website (including sub-domains and microsites) and mobile applications. It also describes the purposes for which we 
+				collect that personal information, the other parties with whom we may share it and the measures we take to protect the security of your data. It also tells you about your 
+				rights and choices with respect to your personal information, and how you can contact us about our privacy practices. </p>
+				<p>You are advised to carefully read this Privacy Notice before using or availing any of our products and/or services.</p>
+				<p><strong>1. DEFINITIONS</strong></p><p>In this Privacy Notice, the following definitions are used:</p><p><strong>Cookies</strong></p>
+				<p>A small file placed on your device by our website or mobile application when you either visit or use certain features of our website or mobile application.  A cookie generally allows a website to remember your actions or preference for a certain period of time.</p><p><strong>Data</strong></p><p>Includes non-personal information, personal information and sensitive personal information about you, which either directly or indirectly in combination with other information, could allow you to be identified when you visit our stores, website and/or mobile application.</p><p><strong>Data Protection Laws</strong></p><p>Any applicable law for the time being in force relating to the processing of Data.</p><p><strong>Partners </strong></p><p>Select third parties (including Tata Group Entities) with whom we have contracts for the businesses described in this Privacy Notice.</p><p><strong>Service Providers</strong></p><p>Includes entities to whom we or other Tata Group Entities will disclose your Data in order to process information for a specific purpose pursuant to written contract. </p><p><strong>Tata Starbucks </strong></p><p>Tata Starbucks, a company incorporated in India whose registered office is at 4th floor, New Excelsior Building, Amrit Keshav Nayak Marg, Fort, Mumbai 400001 </p><p><strong>Tata Group Entity </strong></p><p>Tata Sons Private Limited, and its subsidiaries, affiliates, associate companies and joint venture companies with whom we have a contractual arrangement to, inter alia, share data for the purposes described in this Privacy Notice.</p><p><strong>User or you</strong></p><p>The natural person who accesses our stores, website or mobile application.</p><p><strong>2. WHAT DATA DO WE COLLECT ABOUT YOU</strong></p><p>Tata Starbucks collects Data for various purposes set out in this Privacy Notice.</p><p>This Data includes, without limitation, the following categories:</p><p>(a) Contact information: first and last name, email address, postal address, country, employer, phone number and other similar contact data. </p><p>(b) Financial information: payment instrument information, transactions, transaction history, preferences, method, mode and manner of payment, spending pattern or trends, and other similar data. </p><p>(c) Technical information: website, device and mobile app usage, Internet Protocol (IP) address and similar information collected via automated means, such as cookies, pixels and similar technologies.</p><p>(d) Transaction information: the date of the transaction, total amount, transaction history and preferences and related details.</p><p>(e) Product and service information: Your account membership number, registration and payment information, and program-specific information, when you request products and/or services directly from us, or participate in marketing programs.</p><p>(f) Personal information: Age, sex, date of birth, marital status, nationality, details of government identification documents provided, occupation, ethnicity, religion, travel history or any other personal information provided in responses to surveys or questionnaires.</p><p>(g) Your reviews, feedback and opinions about our products, programmes and services.</p><p>(h) Loyalty programme information: your loyalty membership information, account details, profile or password details and any frequent flyer or travel partner programme affiliation.</p><p><strong>3. HOW WE COLLECT DATA </strong></p><p>We collect Data in the following ways:</p><p>• Information You Give Us: We receive and store any information you enter on our website or mobile application or give us in any other way (e.g., at outlets, stores, hotels, kiosks). Please see the section titled “Data Shared by You” for more information.</p><p>• Automatic Information We Collect: We use “cookies”, pixels and similar technologies to receive and store certain types of information whenever you interact with us. Please see the section below, titled “Data that is Collected Automatically” for more information.</p><p>• E-mail Communications: To help us make e-mails more relevant and interesting, we often receive a confirmation (if your device supports such capabilities) when you open e-mail from us or click on a link in the e-mail. You can choose not to receive marketing emails from us by clicking on the unsubscribe link in any marketing email.</p><p>• Automatic Information We Collect from Other Websites:  We receive and store certain types of information when you interact with third-party websites that use our technology or with whom we have a specific agreement.  Because we process this information on behalf of the applicable website operators, collection, processing, and use of such information is subject to the applicable website operators’ privacy policies and is not covered by our Privacy Notice. </p><p>• Information from Other Sources:  We may obtain information from other sources. An example of this is when you authorize a third-party website (such as the website of another Tata Group Entity), to interact directly with our website or mobile application to provide or receive Data about you. In that case, we might receive such Data used by that third-party website to identify your account with that website.</p><p>• Information Previously Provided to Tata Group Entities: Where you have shared any information previously with any of the Tata Group Entities and have consented to the further sharing of such information, such information will be shared with us by the Tata Group Entities.</p><p>You can make choices about our collection and use of your Data. For example, you may want to access, edit or remove your Data on our website or mobile application. When you are asked to provide Data, you may decline. </p><p><strong>4. DATA SHARED BY YOU</strong></p><p>Tata Starbucks may collect your Data in several ways from your use of our stores, website or mobile application. For instance:</p><p>(a) When you register with us to receive our products and/or services;</p><p>(b) When you conduct a transaction with us or attempt a transaction at our stores, on our website or mobile application;</p><p>(c) When you complete surveys conducted by or for us;</p><p>(d) When you elect to receive any communications (including promotional offers) from us;</p><p>(e) From the information gathered by your visit to our stores, website or mobile application;</p><p><strong>5. DATA THAT IS COLLECTED AUTOMATICALLY</strong></p><p>(a) We automatically collect some information when you visit our website or use our mobile application. This information helps us to make improvements to our content and navigation. The information collected automatically includes your IP address.</p><p>(b) Our web servers or affiliates who provide analytics and performance enhancement services collect IP addresses, operating system details, browsing details, device details and language settings. This information is aggregated to measure the number of visits, average time spent on the site, pages viewed and similar information. Tata Starbucks uses this information to measure the site usage, improve content and to ensure safety and security, as well enhance performance of our website or mobile application.</p><p>(c) We may collect your Data automatically via Cookies, pixels and similar technologies in line with settings on your browser. For more information about Cookies, please see the section below, titled “Cookies, Pixels and Similar Technologies”.</p><p><strong>6. OUR USE OF DATA </strong></p><p>Any or all the above Data may be required by us from time to time to provide information relating to Tata Starbucks and to work on the experience when using our website or mobile application. Specifically, Data may be used by us for the following reasons:</p><p>(a) Carry out our obligations arising from any contract entered into between you and us;</p><p>(b) Provide products and/or services and communicate with you about products and/or services offered by us;</p><p>(c) Enable Tata Group Entities and Partners to offer their products and/or services and communicate with you about such products and/or services;</p><p>(d) Processing, disclosing, transmitting, and/or sharing the data/information with Tata Group Entities, and other third parties which have business or contractual dealings with us;</p><p>(e) Provide you with offers (including for financial products and/or services), personalized services and recommendations and improve your experience on our website and mobile application;</p><p>(f) Operate, evaluate and improve our business, website and mobile application;</p><p>(g) Generate aggregated data to prepare insights to enable us to understand customer behaviour, patterns and trends with a view to learning more about your preferences or other characteristics; </p><p>(h) Provide privileges and benefits to you, marketing and promotional campaigns based on your profile;  </p><p>(i) In connection with loyalty programs owned and operated by us or by other Tata Group Entities;</p><p>(j) Communicate with you (including to respond to your requests, questions, feedback, claims or</p><p>disputes) and to customize and improve our services;</p><p>(k) Enforce the terms of use of our website and mobile application;</p><p>(l) Protect against and prevent fraud, illegal activity, harm, financial loss and other legal or information security risks; and</p><p>(m) serve other purposes for which we provide specific notice at the time of collection, and as otherwise authorized or required by applicable law.</p><p>We treat these inferences as personal information (or sensitive personal information, as the case may be), where required under applicable law. Some of the above grounds for processing will overlap and there may be several grounds which justify our use of your personal information.</p><p>Where required under applicable law, we will only use your personal information with your consent; as necessary to provide you with products and/or services; to comply with a legal obligation; or when there is a legitimate interest that necessitates the use.</p><p><strong>7. MINORS </strong></p><p>Our website and mobile application do not offer products or services for use by minors. If you are under 18, you may use our website or mobile application only with the involvement of a parent or guardian.</p><p><strong>8. SHARING OF DATA </strong></p><p>We may share your Data with/ for:</p><p>(a) Partners: We may make available to you services, products, or applications provided by Partners for use on or through our website or mobile application. If you choose to use such service, customer information related to those transactions may be shared with such Partner.  </p><p>Such Partners will be required to respect the security of your Data and to treat it in accordance with this privacy policy and applicable law. Such Partners’ use your Data for the purposes of providing their own products or services to you. Their use of your Data is subject to their own privacy policies. For further information on how these Partners process your Data, please refer to their privacy policies.</p><p>(b) Tata Group Entities:  We may make available to you products, services and /or applications of Tata Group Entities, to assist them to reach out to you in relation to their programs or campaigns and to process your queries and requests. Accordingly, we may share your Data with Tata Group Entities. We may also share your Data with the Tata Group Entities as is relevant for the purposes set out in Clause 7 above, and to facilitate the operation of our business. Their use of your Data is subject to their own privacy policies. For further information on how these Tata Group Entities process your Data, please review their privacy policies. </p><p>(c) Tata Consumer Platform: Your Data may be shared with Tata Digital Limited and other Tata Group Entities and other participating entities on the Tata Consumer Platform (“TCP”) operated by Tata Digital Limited for the purposes of enrolment, offering you products, services and benefits on the TCP. Accordingly, we may share your Data with Tata Digital Limited, other Tata Group Entities, Partners and Service Providers. Their use of your Data is subject to their own privacy policy. For further information on how Tata Digital Limited, Tata Group Entities, Partners and Service Providers process your Data for the purpose of enrolment, offering products, services and benefits on TCP, please review their privacy policies.</p><p>(d) Service Providers:  We or other Tata Group Entities may share your Data with Service Providers. Examples include storing and analysing Data, protecting and securing our systems, providing search results and links, providing customer service, credit analysis, processing your information for profiling, user analysis and payment processing. </p><p>These Service Providers will be required to only process Data in accordance with express instructions and as necessary to perform services for purposes set forth in this Privacy Notice. The Service Providers will also be required to safeguard the security and confidentiality of the Data they process by implementing appropriate technical and organizational security measures and confidentiality obligations binding employees accessing Data.</p><p>(e) When Tata Starbucks acts as a Service Provider: We may process and share your Data with Tata Group Entities and Partners when we act as a service provider to such Tata Group Entities and Partners.</p><p>(f) Protecting Tata Starbucks: We may release Data when we believe release is appropriate to comply with applicable law or legal process, enforce or apply the Terms of Use of our website or mobile application and other agreements, protect Tata Starbucks against harm or financial loss, when we believe disclosure is necessary to protect individuals’ vital interests, or in connection with an investigation of suspected or actual fraudulent or illegal activity. This may include exchanging information with other companies and organizations for fraud protection, risk management and dispute resolution.  This does not include selling or otherwise disclosing personally identifiable information from users for commercial purposes in violation of this Privacy Notice.</p><p>Business Transfers: As we continue to develop our business, we might sell or buy subsidiaries or business units. Your Data (including in relation to loyalty programs) may be transferred as part of such transaction. </p><p>(g) Third Parties: We may also share your Data with other third parties where:</p><p>a) You request or authorize us to do so;</p><p>b) We need to comply with applicable law or respond to valid legal process; or</p><p>c) We need to operate and maintain the security of our website or mobile application, including to prevent or stop an attack on our computer systems or networks.</p><p>We require these third parties by contract to only process sensitive personal data in accordance with our instructions and as necessary to perform services on our behalf or in compliance with applicable law. We also require them to safeguard the security and confidentiality of the sensitive personal data they process on our behalf by implementing appropriate confidentiality, technical and organizational security measures.</p><p>Please note that Tata Group Entities and Partners may have privacy practices that differ from those of Tata Starbucks.  The use of your Data will be governed by their privacy statements when you provide Data on their websites.</p><p><strong>9. KEEPING DATA SECURE </strong></p><p>We will use technical and organisational measures to safeguard your Data and we store your Data on secure servers.  Technical and organisational measures include measures to deal with any suspected data breach.  If you suspect any misuse or loss or unauthorised access to your Data, please let us know immediately by contacting us by e-mail.</p><p><strong>10. RETENTION OF DATA </strong></p><p>Tata Starbucks retains Data for as long as necessary for the use of our products and/or services or to provide access to and use of our website or mobile application, or for other essential purposes such as complying with our legal obligations, resolving disputes, enforcing our agreements and as long as processing and retaining your Data is necessary for our legitimate interests. Because these needs can vary for different data types and purposes, actual retention periods can vary significantly.</p><p>Even if we delete your Data, including on account of exercise of your right under Clause 12 below, it may persist on backup or archival media for audit, legal, tax or regulatory purposes.</p><p><strong>11. YOUR RIGHTS AND CHOICES </strong></p><p>When we process Data about you, we do so with your consent and/or as necessary to operate our business, meet our contractual and legal obligations, protect the security of our systems and our customers, or fulfil other legitimate interests of Tata Starbucks as described in this Privacy Notice.</p><p>We may transfer Data we collect about you to recipients in India, where we are headquartered.  India may not have the same Data Protection Laws as the country in which you initially provided the information. When we transfer your Data to India, we will protect that information as described in this Privacy Notice, as disclosed to you at the time of data collection or as described in our program-specific privacy notice.</p><p>Depending on which Data Protection Laws are applicable to you, you may have the right or choice to:</p><p>• Opt out of some collection or uses of your Data, including the use of cookies, pixels and similar technologies and the use of your Data for marketing purposes.</p><p>• Access your Data, rectify it, restrict or object to its processing, or request its deletion or anonymization.</p><p>• Change or edit information submitted to us.</p><p>• Receive the Data you provided to us to transmit it to another company.</p><p>• Withdraw any consent provided or alter your preferences.</p><p>• Where applicable, lodge a complaint with your supervisory authority.</p><p>You may submit a request as described in the “How to Contact Us” section below. We will not charge you for any request. Where we are legally permitted to do so, we may refuse your request.  If we refuse your request, we will tell you the reasons why.</p><p>Below, you will find additional privacy information that you may find important. Data Protection Laws, depending on your country, may include the following rights in relation to your Data:</p><p>a) Right to Confirmation and Access - the right to confirm our methods of processing and request</p><p>(i)  copies of the information we hold about you at any time, or</p><p>(ii)  that we modify, or update such information.</p><p>b) Right to Correction - the right to have your Data rectified if it is inaccurate or incomplete, upon providing supporting documentation.</p><p>c) Right to Restrict / Object to Our Use of your Data - the right to limit the way in which we can use it.</p><p>d) Right to Withdraw Consent – the right to withdraw your consent provided earlier.</p><p>e) Right to File Complaints – the right to raise complaints to a regulatory authority. </p><p>For information about managing your Data and promotional communications, please e-mail us at customercare@tatastarbucks.com.  </p><p>It is important that the Data we hold about you is accurate and current. Please keep us informed if your personal information changes during the period for which we hold it.</p><p><strong>12. WHERE WE STORE DATA </strong></p><p>Data collected under this Privacy Notice is hosted on servers located in India. </p><p><strong>13. PROCESSING YOUR DATA </strong></p><p>We take steps to ensure that the Data we collect under this Privacy Notice is processed according to the provisions of this Privacy Notice and the requirements of applicable law.</p><p>To ensure that your Data receives an adequate level of protection, we have put in place appropriate written contracts with Tata Group Entities, Partners and Service Providers that we share your Data with.   This ensures your Data is treated by such parties in a way that is consistent with applicable law.</p><p><strong>14. COOKIES, PIXELS AND SIMILAR TECHNOLOGIES</strong></p><p>Our website and mobile application may place and access certain Cookies on your device. Cookies are unique identifiers that we transfer to your device to enable our systems to recognize your device.  We also use pixels and similar technologies to analyse traffic on our website and mobile application to improve your experience of using them.</p><p><strong>15. SEVERABILITY</strong></p><p>If any court or competent authority finds that any provision of this Privacy Notice (or part of any provision) is invalid, illegal or unenforceable, that provision or part-provision will, to the extent required, be deemed to be deleted, and the validity and enforceability of the other provisions of this Privacy Notice will not be affected.</p><p><strong>16. CHANGES TO THIS PRIVACY NOTICE </strong></p><p>Our business changes constantly and our Privacy Notice will change also. We may e-mail periodic reminders of our notices and conditions, unless you have instructed us not to, but you should check our website and mobile application frequently to see recent changes. The updated version will be effective as soon as it is accessible. Any changes will be immediately posted on our website and mobile application and you are deemed to have accepted the terms of the updated Privacy Notice on your first use of our website or mobile application or first purchase of the products and/or services following the alterations. We encourage you to review this Privacy Notice frequently to be informed of how we are protecting your information.</p><p><strong>17. HOW TO CONTACT US </strong></p><p>To request to review, update, or delete your personal information or to otherwise reach us, please submit a request by e-mailing us at customercare@tatastarbucks.com. You may contact us for information on Service Providers, Partners and Tata Group Entities with whom we may share your Data in compliance with this Privacy Notice and applicable law. We will respond to your request within 30 days.</p>
+            </div>
+    </div>   
+</article>
+
+    <!-- END: Main Region Content -->
+</div>
+<!-- END: Main Region -->
+            
+        </div>
+        
+    </div>
+    
+</main>
+<!-- BEGIN: Pre-Footer Region -->
+<div class="container">
+    <div class="grid">
+        <div class="column size12of12" typeof="Region" resource="PreFooter">
+            <!-- BEGIN: Pre-Footer Region Content -->
+            <div >
+        <ul class="breadcrumb" id="breadcrumb">
+                    <li class="breadcrumb__item"><a class="breadcrumb__link" href="https://card.starbucks.in/">Card</a></li>
+                    <li class="breadcrumb__item"><a class="breadcrumb__link" href="../rewards/customer-service.html">Learn More</a></li>
+                            <li class="breadcrumb__item">Privacy Policy</li>
+        </ul>
+</div>
+
+            <!-- END: Pre-Footer Region Content -->
+        </div>
+    </div>
+</div>
+<!-- END: Pre-Footer Region -->
+<footer id="footer" tabindex="0" class="footer">
+    <div class="footer-top">
+        
+    <div class="container" >
+    <div class="grid">
+        <ul class="sb-social-icons column size12of12 med_size4of12 ">
+                    <li class="facebook">
+                        <a href="https://www.facebook.com/starbucksindia"  title="Facebook">
+                            <span class="hidden_visually">Facebook</span>
+                        </a>
+                    </li>
+                    <li class="twitter">
+                        <a href="https://twitter.com/starbucksindia"  title="Twitter">
+                            <span class="hidden_visually">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="instagram">
+                        <a href="https://www.instagram.com/starbucksindia"  title="Instagram">
+                            <span class="hidden_visually">Instagram</span>
+                        </a>
+                    </li>
+        </ul>
+
+        
+    </div>
+</div>
+
+    </div>
+    <div class="footer-main">
+        <div class="container" >
+            <div class="grid">
+                
+<style>
+    @media (min-width: 768px) {
+        .footer_global {
+            background-image: url(../../media/wordmark_footer_tcm87-397.png);
+        }
+    }
+</style>
+
+
+
+                <div class="footer_global accordion">
+                    
+<div class="info_block column size12of12 med_size4of12 lg_size2of12" >
+        <h4 >
+                <a href="../../about-us.html" title="About Us" >
+                    About Us
+                </a>
+            <label for="footer_link_group_54ab441c-9d17-4611-9b54-1c2e6ba1ace6" data-icon="&#x2304" tabindex="0"></label>
+        </h4>
+        <input id="footer_link_group_54ab441c-9d17-4611-9b54-1c2e6ba1ace6" name="footer" type="radio" aria-hidden="true" />
+            <ol>
+                    <li >
+                        <a href="../../about-us/our-heritage.html" title="Our HeritageInvestor Relations" >Our Heritage</a>
+                    </li>
+                    <li >
+                        <a href="../../about-us/company-information.html" title="Our Company" >Our Company</a>
+                    </li>
+            </ol>
+</div>
+<div class="info_block column size12of12 med_size4of12 lg_size2of12" >
+        <h4 >
+                <a href="../rewards/customer-service.html" title="Customer Service" >
+                    Customer Service
+                </a>
+            <label for="footer_link_group_d05a37f5-d0dc-4240-bf60-a2313edd5ea3" data-icon="&#x2304" tabindex="0"></label>
+        </h4>
+        <input id="footer_link_group_d05a37f5-d0dc-4240-bf60-a2313edd5ea3" name="footer" type="radio" aria-hidden="true" />
+            <ol>
+                    <li >
+                        <a href="../../customer-service/frequently-asked-questions.html" title="Frequently Asked QuestionsWorking at Starbucks" >Frequently Asked Questions</a>
+                    </li>
+            </ol>
+</div>
+<div class="info_block column size12of12 med_size4of12 lg_size2of12" >
+        <h4 >
+Quick Links            <label for="footer_link_group_a8e56846-b592-45bb-b59e-15d7eb59f832" data-icon="&#x2304" tabindex="0"></label>
+        </h4>
+        <input id="footer_link_group_a8e56846-b592-45bb-b59e-15d7eb59f832" name="footer" type="radio" aria-hidden="true" />
+            <ol>
+                    <li >
+                        <a href="https://rewards.starbucks.in/store-locator" target="_blank" title="Store Locator" >Store Locator</a>
+                    </li>
+            </ol>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="grid">
+                
+
+<div class="column size12of12" >
+    <ul class="footer_sub">
+                <li >
+                    <a href="../../about-us/company-information/online-policies/web-accessibility.html" title="Web Accessiblity" >Web Accessiblity</a>
+                </li>
+                <li >
+                    <a href="privacy-policy.html" title="Privacy Statement" >Privacy Statement</a>
+                </li>
+                <li >
+                    <a href="../../about-us/company-information/online-policies/terms-of-use.html" title="Terms of Use" target="_self">Terms of Use</a>
+                </li>
+                <li >
+                    <a href="../../site-map.html" title="Site Map" >Site Map</a>
+                </li>
+                <li >
+                    <a href="../rewards/customer-service.html" title="Contact Us" >Contact Us</a>
+                </li>
+    </ul>
+    <div id="teconsent" class="teconsent_showBorder">
+            <script async="async" type="text/javascript" src="http://consent.truste.com/notice?domain=starbucks.com&amp;c=teconsent&amp;text=true&amp;js=nj&amp;noticeType=bb&amp;country=in&amp;language=en" crossorigin></script>
+    </div>
+</div>
+
+<div class="column size12of12" >
+        <p class="footer_copyright" >&#169; 2022 Starbucks Coffee Company. All rights reserved.</p>
+</div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+    
+
+    <!-- BEGIN: Bottom JavaScript -->
+    
+    <script src="https://www.starbucks.in/ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../static/js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
+
+<script type="text/javascript" src="../../static/js/framework.js"></script>
+    <script>
+    sb.namespace("config");
+    
+    sb.config.globalTextResources = {
+        closeButtonText: 'Close'
+    };
+</script>
+
+
+    
+
+    <script type="text/javascript" src="../../static/js/main.js"></script>
+    <script type="text/javascript" src="../../static/js/our-coffees.js"></script>
+    <!-- END: Bottom JavaScript -->
+</body>
+
+</html>

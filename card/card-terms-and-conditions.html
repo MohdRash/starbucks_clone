@@ -1,0 +1,717 @@
+
+<!DOCTYPE html>
+<!--[if IE 6]><html id="ie6" class="ie9 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]-->
+<!--[if IE 7]><html id="ie7" class="ie9 lt-ie10 lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if IE 8]><html id="ie8" class="ie8 lt-ie10 lt-ie9" lang="en"><![endif]-->
+<!--[if IE 9]><html id="ie9" class="ie9 lt-ie10"lang="en"><![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"671cca5e0f","applicationID":"899226958","transactionName":"NQMBZkJRXEAEAhJQCgxJLmRzH2JSAgQlVgsWFAxeXFVAHDUAAVw=","queueTime":0,"applicationTime":261,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"671cca5e0f",applicationID:"899226958"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https:///")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    
+<title>Starbucks Card Terms &amp; Conditions</title>
+
+    <!-- BEGIN: MetaData -->
+    
+            <meta property="og:title" content="Starbucks Card Terms &amp; Conditions" />
+            <meta name="twitter:card" content="summary">
+            <meta property="og:type" content="article" />
+            <meta property="og:locale" content="en" />
+            <meta name="description" content="Starbucks Card Terms &amp; Conditions">
+            <meta property="og:description" content="Starbucks Card Terms &amp; Conditions" />
+<meta property="og:url" content="card/card-terms-and-conditions" />
+    <meta property="og:site_name" content="Starbucks Coffee Company" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- END: MetaData -->
+    <!-- BEGIN: CSS -->
+        <link href="http://fonts.googleapis.com/css?family=Lato:400,700|Crete+Round:400,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../static/css/main.css">
+    
+    <!-- END: CSS -->
+    <!-- BEGIN: Favicons -->
+    <link rel="shortcut icon" type="image/x-icon" href="../static/images/favicon.ico" />
+<link rel="apple-touch-icon" href="../static/images/touch-icon-iphone.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="../static/images/touch-icon-ipad.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="../static/images/touch-icon-iphone4.png" />
+    <!-- END: Favicons -->
+    <!-- BEGIN: Top JavaScript -->
+    <script type="text/javascript" src="../static/js/vendor/modernizr.min.js"></script>
+<script>
+    document.createElement("picture");
+</script>
+<script src="../static/js/vendor/picturefill.min.js" async></script>
+    
+    <!-- END: Top JavaScript -->
+
+                    <script>var w=window;if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document;AKSB=w.AKSB||{},AKSB.q=AKSB.q||[],AKSB.mark=AKSB.mark||function(e,_){AKSB.q.push(["mark",e,_||(new Date).getTime()])},AKSB.measure=AKSB.measure||function(e,_,t){AKSB.q.push(["measure",e,_,t||(new Date).getTime()])},AKSB.done=AKSB.done||function(e){AKSB.q.push(["done",e])},AKSB.mark("firstbyte",(new Date).getTime()),AKSB.prof={custid:"459352",ustr:"",originlat:"0",clientrtt:"61",ghostip:"49.44.141.206",ipv6:true,pct:"10",clientip:"2409:4063:4e28:9f9d:c929:7681:3ae6:7650",requestid:"3c121527",region:"34882",protocol:"",blver:14,akM:"dsca",akN:"ae",akTT:"O",akTX:"1",akTI:"3c121527",ai:"343999",ra:"false",pmgn:"",pmgi:"",pmp:"",qc:""},function(e){var _=d.createElement("script");_.async="async",_.src=e;var t=d.getElementsByTagName("script"),t=t[t.length-1];t.parentNode.insertBefore(_,t)}(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")}</script>
+                    </head>
+<body>
+    
+<!--[if lte IE 8]>
+<aside class="notificationBar notificationBar--oldBrowser">
+    <div >
+        <section class="validation">
+            <div class="validation_summary warning">
+                <h2 class="validation_summary_title" >You may want to update your browser</h2>
+                <div >
+                    <p>You’re using an older browser. Starbucks will work better for you if you <a href="http://windows.microsoft.com/en-gb/internet-explorer/download-ie">upgrade your browser</a> or switch to another browser.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</aside>
+<![endif]-->
+
+<div id="consent_blackbar"></div>
+
+<aside class="notificationBar notificationBar--shop">
+</aside>
+
+<header class="header_container">
+    <div class="container">
+        <div class="grid">
+            <div class="column size12of12">
+                <div class="" id="header">
+                    <ul class="skip">
+                        <li><a href="card-terms-and-conditions.html#nav">skip to Main Navigation</a></li>
+                        <li><a href="card-terms-and-conditions.html#content">skip to Main Content</a></li>
+                        <li><a href="card-terms-and-conditions.html#footer">skip to Footer</a></li>
+                    </ul>
+                    <div >
+        <a href="../index.html" id="logo" rel="home" title="Starbucks Logo"  >
+<img src="../media/logo_tcm87-366_w1024_n.png" alt="Logo" data-aspect="0" class="logo" />        </a>
+</div>
+
+                    <div id="utilities" >
+        <ul class="utility_list">
+                        <li class="utility_link store_locator">
+                            <a href="https://rewards.starbucks.in/store-locator" target="_blank" title="Find A Store"  ><span aria-hidden="true" data-icon="&#x272a"></span><span class="hidden_visually med_render_visually">Find A Store</span></a>
+                        </li>
+        </ul>
+</div>
+
+                    <nav id="nav" >
+    <div class="nav_control">
+        <a href="card-terms-and-conditions.html#nav">
+            <span class="hamburger"></span>
+            <span class="hidden_visually">Navigation</span>
+        </a>
+    </div>
+    <div class="nav_menu">
+            <ul>
+                    <li id="nav_0">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../coffee.html"><strong>Coffee</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_1">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../menu-list.html"><strong>Menu</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_2">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../coffeehouse.html"><strong>Coffeehouse</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_3">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../responsibility.html"><strong>Responsibility</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_4">
+                        <div class="null_left"></div>
+                            <a class="tab" href="https://rewards.starbucks.in/" target="_blank"><strong>Rewards</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_5">
+                        <div class="null_left"></div>
+                            <a class="tab" href="https://careers.starbucks.in/" target="_blank"><strong>Careers</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_6">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../Starbucks-Seasons-Gifting.html"><strong>Starbucks Season&#39;s Gifting</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_7">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../starbucks-delivers.html"><strong>Starbucks Delivers</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_8">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../about-us.html"><strong>About Us</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+            </ul>
+    </div>
+</nav>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="menus" class="megaNav">
+        <ol class="container">
+                <li class="fields" id="menu_0">
+                        <div class="region size4of5 menu_content">
+                            <ol class="blocks blocks-four-up">
+                                    <li>
+                                        <p>
+                                                <a href="../coffee/our-coffees.html">Our Coffees</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../coffee/our-coffees/format/via.html">Starbucks VIA&#174;</a></li>
+                                                    <li><a href="../coffee/our-coffees/format/whole-bean.html">Whole Bean Coffee</a></li>
+                                                    <li><a href="../coffee/our-coffees/view-all-coffees.html">View All Coffees</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../coffee/finder.html">Find Your Perfect Coffee</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../coffee/espresso.html">Espresso</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../coffee/espresso/ingredients.html">The Ingredients</a></li>
+                                                    <li><a href="../coffee/espresso/best-equipment.html">The Best Equipment</a></li>
+                                                    <li><a href="../coffee/espresso/who-makes-it.html">Who Makes It</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../coffee/how-to-brew.html">How to Brew Great Coffee</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/coffee/how-to-brew/coffee-press.html">Coffee Press</a></li>
+                                                    <li><a href="https://www.starbucks.in/coffee/how-to-brew/pour-over.html">Pour-Over</a></li>
+                                                    <li><a href="https://www.starbucks.in/coffee/how-to-brew/iced-pour-over.html">Iced Pour-Over</a></li>
+                                                    <li><a href="https://www.starbucks.in/coffee/how-to-brew/coffee-brewer.html">Coffee Brewer</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../coffee/ethical-sourcing.html">Ethical Sourcing</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/coffee-sourcing.html">Coffee</a></li>
+                                                    <li><a href="../coffee/ethical-sourcing/coffee-quality.html">Coffee Quality</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/farmer-support.html">Farmer Support</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="rewards/customer-service.html">Learn More</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../coffee/learn/roast.html">Starbucks Roast Spectrum</a></li>
+                                                    <li><a href="../coffee/learn/coffee-form.html">Coffee by Form</a></li>
+                                                    <li><a href="../coffee/learn/flavors-in-your-cup.html">Flavors in Your Cup</a></li>
+                                                    <li><a href="../coffee/learn/coffee-faqs.html">Coffee FAQ</a></li>
+                                            </ol>
+                                    </li>
+                            </ol>
+                                <p class="menu_suggestion_title">
+Looking for Coffee Beverages?                                </p>
+                                    <ul class="menu_suggestion_links">
+                                            <li class="navGroup_menu_sugList_item">
+                                                    <a class="link" href="https://www.starbucks.in/menu-list/drinks/index.html"  >Drinks</a>
+                                            </li>
+                                    </ul>
+                        </div>
+                            <div class="region size1of5 menu_promo">
+                                    <div class="anchor">
+                                        
+                                    </div>
+                            </div>
+                </li>
+                <li class="fields" id="menu_1">
+                        <div class="region size4of5 menu_content">
+                            <ol class="blocks blocks-four-up">
+                                    <li>
+                                        <p>
+                                                <a href="../menu-list/drinks.html">Drinks</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Featured_Beverages.html">Featured Beverages</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Espresso_Beverages.html">Espresso</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Freshly_Brewed_Coffee.html">Freshly Brewed Coffee</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Coffee_Frappuccino.html">Coffee Frappuccino&#174;</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Creme_Frappuccino.html">Cr&#232;me Frappuccino&#174;</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Other_Beverages.html">Other Beverages</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Cold_Brew.html">Cold Brew</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Teavana_Tea.html">Teavana&#174; Tea</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Iced_Shaken.html">Iced Shaken</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../menu-list/food-list.html">Food</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../menu-list/food-list/featured-food.html">Featured Food</a></li>
+                                                    <li><a href="../menu-list/food-list/Sweet_Bakery_Food.html">Sweet Bakery</a></li>
+                                                    <li><a href="../menu-list/food-list/Savoury_Bakery_food.html">Savoury Bakery</a></li>
+                                                    <li><a href="../menu-list/food-list/Sandwiches_Wraps.html">Sandwiches &amp; Wraps</a></li>
+                                                    <li><a href="../menu-list/food-list/Salads_Muesli.html">Salads &amp; Muesli</a></li>
+                                                    <li><a href="../menu-list/food-list/Desserts.html">Desserts</a></li>
+                                            </ol>
+                                    </li>
+                            </ol>
+                                <p class="menu_suggestion_title">
+                                </p>
+                        </div>
+                            <div class="region size1of5 menu_promo">
+                                    <div class="anchor">
+                                        
+                                    </div>
+                            </div>
+                </li>
+                <li class="fields" id="menu_2">
+                        <div class="region size4of5 menu_content">
+                            <ol class="blocks blocks-four-up">
+                                    <li>
+                                        <p>
+                                                <a href="../coffeehouse/wireless-internet.html">Wireless Internet</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../store-locator/search.html">Store Locations</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../coffeehouse/store-design.html">Store Design</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../coffeehouse/store-design/fort-mumbai.html">Fort – Mumbai</a></li>
+                                                    <li><a href="../coffeehouse/store-design/indiranagar-bangalore.html">Indiranagar Bangalore</a></li>
+                                                    <li><a href="../coffeehouse/store-design/koregaon-park-pune.html">Koregaon Park Pune</a></li>
+                                                    <li><a href="../coffeehouse/store-design/hamilton-house-delhi.html">Hamilton House Delhi</a></li>
+                                                    <li><a href="../coffeehouse/store-design/jubiliee-hills-hyderabad.html">Jubiliee Hills Hyderabad</a></li>
+                                                    <li><a href="../coffeehouse/store-design/phoenix-market-city-chennai.html">Phoenix Market City Chennai</a></li>
+                                                    <li><a href="../coffeehouse/store-design/park-mansions-kolkata.html">Park Mansions Kolkata</a></li>
+                                            </ol>
+                                    </li>
+                            </ol>
+                                <p class="menu_suggestion_title">
+                                </p>
+                        </div>
+                            <div class="region size1of5 menu_promo">
+                                    <a href="mobile_application_campaign.html"  >
+                                                <p><img src="../media/promomobile_tcm87-27713.png" alt="Starbucks app on mobile device" /></p>
+        <p><strong>Starbucks&#174; India Mobile app</strong></p>
+        <p>Scan, pay and earn rewards. It’s that simple. Get our mobile app today!</p>
+
+                                    </a>
+                            </div>
+                </li>
+                <li class="fields" id="menu_3">
+                        <div class="region size4of5 menu_content">
+                            <ol class="blocks blocks-four-up">
+                                    <li>
+                                        <p>
+                                                <a href="https://www.starbucks.in/responsibility/community.html">Community</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/responsibility/community/local-area-engagement.html">Local Area Engagement</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/community/Empowering-Girls-And-Young-Women.html">Empowering Girls And Young Women</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/community/swastha.html">Swastha</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/community/chai-project.html">Chai Project</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="https://www.starbucks.in/responsibility/ethical-sourcing.html">Ethical Sourcing</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/coffee-sourcing.html">Coffee Sourcing</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/farmer-support.html">Farmer Support</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/tea-sourcing.html">Tea Sourcing</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/cocoa-sourcing.html">Cocoa Sourcing</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="https://www.starbucks.in/responsibility/environment.html">Environment</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/responsibility/environment/recycling.html">Recycling</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/environment/energy.html">Energy</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/environment/water.html">Water</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/environment/green-building.html">Green Building</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/environment/climate-change.html">Climate Change</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="https://www.starbucks.in/responsibility/diversity.html">Diversity</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="rewards/customer-service.html">Learn More</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/responsibility/learn-more/shared-planet.html">Starbucks Shared Planet</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/learn-more/policies.html">Policies</a></li>
+                                            </ol>
+                                    </li>
+                            </ol>
+                                <p class="menu_suggestion_title">
+                                </p>
+                        </div>
+                            <div class="region size1of5 menu_promo">
+                                    <div class="anchor">
+                                        
+                                    </div>
+                            </div>
+                </li>
+                <li class="fields" id="menu_4">
+                </li>
+                <li class="fields" id="menu_5">
+                </li>
+                <li class="fields" id="menu_6">
+                </li>
+                <li class="fields" id="menu_7">
+                </li>
+                <li class="fields" id="menu_8">
+                        <div class="region size4of5 menu_content">
+                            <ol class="blocks blocks-four-up">
+                                    <li>
+                                        <p>
+                                                <a href="../about-us/our-heritage.html">Our Heritage</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../about-us/company-information.html">Our Company</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../about-us/company-information/mission-statement.html">Mission Statement</a></li>
+                                                    <li><a href="../about-us/company-information/newsroom.html">Starbucks Newsroom</a></li>
+                                                    <li><a href="../about-us/company-information/business-ethics-and-compliance.html">Business Ethics and Compliance</a></li>
+                                                    <li><a href="../about-us/company-information/online-policies.html">Online Policies</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                 <a href="https://careers.starbucks.in/" target="_blank">Career Center</a>
+                                        </p>
+                                    </li>
+                            </ol>
+                                <p class="menu_suggestion_title">
+                                </p>
+                        </div>
+                            <div class="region size1of5 menu_promo">
+                                    <div class="anchor">
+                                        
+                                    </div>
+                            </div>
+                </li>
+        </ol>
+</div>
+
+
+
+
+<main class="main" id="main">
+    <div class="container">
+        
+        <div class="grid">
+            
+
+<!-- BEGIN: Main Region -->
+
+<div class="column lg_size8of12" typeof="Region" resource="Main">
+    <!-- BEGIN: Main Region Content -->
+<article class="articleBlock" >
+        <h1 class="articleBlock__header" >Starbucks Card (issued by Tata Starbucks Private Limited formerly known as Tata Starbucks Limited) Terms &amp; Conditions</h1>
+            <div class="articleBlock__text rtf">
+            <div >
+                <p><strong>These terms and conditions (“Terms and Conditions”) </strong><strong>govern your use of the Prepaid physical Starbuck Card (“Starbucks Card”).</strong> This Starbucks Card is the property of Tata Starbucks Private Limited (“TSPL”) to whom it must be returned, upon request or if found. The following terms and conditions shall apply to the prepaid account of your Starbucks Card. By using your Starbucks Card, you agree to the below mentioned Terms and Conditions. Please ensure that you have read carefully and understood these Terms and Conditions before using your Starbucks Card and also request you to keep a copy of these Terms and Conditions for your records. You further agree that by using the Starbucks Card or by quoting the Starbucks Card number to any of the TSPL’s store/s located in India, you confirm that you have read, understood and accepted the detailed Terms and Conditions of the Starbucks Card.</p>
+            </div>
+                    <div >
+                <h3>Eligibility</h3>
+				<p>To be eligible for the Starbucks Card membership, you should be competent to contract i.e. you should have attained the age of majority according to the Indian law. 
+				Starbucks Card is not targeted towards, nor intended for use by anyone who has not attained the age of majority. Any person under the age of 18, may only use the Starbucks Card under 
+				the supervision of a parent or legal guardian who agrees to be bound by these Terms and Conditions.</p>
+				<h3>About Your Account</h3>
+				<p>Starbucks Card is issued to you by TSPL. This is a prepaid card which can be used as an ideal gift for your friend, loved one or for yourself. 
+				Starbucks Card purchased in India can only be used in Starbucks stores located in India. Starbucks Card issued in markets other than India, will not be able to 
+				be used in Starbucks stores in India. It cannot be replaced if lost, stolen or destroyed unless you have registered it and reported the loss as described below. The value 
+				associated with the Starbucks Card is not insured or guaranteed by any person or entity, unless the card is a <strong>Registered Card.</strong></p>
+				<p>The rupee value that you load onto your Starbucks Card is a prepayment only for purchasing the goods and availing the services of Starbucks stores in India unless otherwise 
+				specified. Starbucks Card can be purchased by paying either through Cash / Credit Card / Debit Card only.</p>
+				<p>Starbucks Card can be loaded using either cash/credit card/debit card at any of the Starbucks’ store. One Starbucks Card cannot be reloaded by using any other 
+				registered/unregistered Starbucks Card.</p><p>For an up-to date list of stores that accept the Starbucks Card, call 18602660010 or visit to our website 
+				<a href="../index.html">www.starbucks.in</a>. We reserve the right not to accept any Starbucks Card or otherwise limit use of a Starbucks Card if we reasonably believe that the use is 
+				unauthorized, fraudulent or otherwise unlawful. Further, misuse of the Starbucks Card or its benefits in any manner may result in the termination of the validity of the Card and/or withdrawal 
+				of benefits at the sole discretion of TSPL.</p><p><strong>Please maintain the Starbucks Card safely. You will only be able to protect the balance of your Starbucks Card by registering it on </strong>
+				<a href="https://rewards.starbucks.in/sign-in" target="_blank"style="font-weight: bold;">rewards.starbucks.in/sign-in</a><strong> or on the </strong><strong>Starbucks India mobile app.</strong></p>
+				<p>Loading Value on Your Card</p><p>Starbucks Card can be purchased by paying either through Cash / Credit Card / Debit Card by visiting any of the Starbucks stores located in India. Starbucks Card 
+				can be used as a mode of payment, whenever the Starbucks Card-holder visits the Starbucks store. You may not load more than Rs.5000 worth of value to your Starbucks Card. The minimum amount that must
+				be initially loaded onto your Starbucks Card is Rs.200. Post the initial load of Rs.200, you will be able to load the Starbucks Card in multiples of Rs.100. The balance on the Starbucks Card does not 
+				have a validity or expiry period. TSPL may change the maximum and minimum amounts at any time by notifying you at the point of sale, or on the Starbucks India website 
+				(<a href="../index.html">www.starbucks.in</a>), and such change shall not constitute an amendment to these Terms and Conditions. No credit card, credit line, overdraft protection or deposit 
+				account is associated with a Starbucks Card. This card is not a credit/debit/ATM card. The balance loaded onto your Starbucks Card is non-refundable and may not be exchanged for cash or credit
+				balance unless required by law in India. No interest, dividends or any other earnings on funds deposited to a Starbucks Card will accrue or be paid or credited to you by TSPL.</p>
+				<p>All amounts loaded onto your Starbucks Card are held and denominated in Indian Rupees. When you make a purchase at a Starbucks store in India in a different currency, the transaction total
+				is converted from the different currency to the Indian Rupees. No fees or other charges are made to your Starbucks Card for the conversion. The balance shown on your receipt will be in the Indian
+				Rupees. Transactions that occur on our website are denominated in Indian Rupees. Currency conversions are based on currency exchange rates applicable on the date of the transaction.</p>
+				<h3>Fees and Expiration of Card Balances</h3><p>TSPL does not charge any fees for the issuance, activation, use or reloading of your Starbucks Card. Your Starbucks Card has no expiration date.</p>
+				<h3>Receipts and Statements</h3><p>Starbucks Card holders are not sent statements of itemized transactions on their registered email id from a Starbucks Card account.
+				You can check the balance of your Starbucks Card or review recent transactions on your Starbucks Card at <a href="https://rewards.starbucks.in/sign-in" target="_blank">rewards.starbucks.in/sign-in</a>. 
+				You will need to have your Starbucks Card available in order to make purchases for the goods and availing the services at Starbucks stores in India. The account balance for a 
+				Starbucks Card also will appear on your receipt from a point-of-sale Electronic Data Capture (EDC) machine. When you use your Starbucks Card, you will receive a receipt but will 
+				not be asked to sign the receipt. The receipt will indicate that the purchase was made using a Starbucks Card and will provide the remaining balance of your Starbucks Card. 
+				You should store your receipts and check your online statement to ensure that your account balance is correct.</p>
+				<h3>Billing Errors, Corrections</h3><p>We reserve the right to correct the balance of your Starbucks Card account if we believe that a clerical, billing or accounting error has occurred.
+				If you have questions regarding your transaction history or any correction, or if you dispute any transaction or correction that has been assessed against your Starbucks Card, please email to us at 
+				<a href="mailto:customercare@tatastarbucks.com">customercare@tatastarbucks.com</a>. We will conduct an investigation and communicate the results and correct any error that we verify as
+				soon as we complete the investigation. If no error was found, we will communicate an explanation to you. We shall have no liability for any billing error unless you provide to us notice 
+				within 60 days of the date of the transaction in question. You are requested to monitor your transactions and account balances accurately.</p>
+				<h3>Registration, Liability for Unauthorized Transactions</h3><p>To register your Card, please visit 
+				<a href="https://rewards.starbucks.in/sign-in" target="_blank"style="font-weight: bold;">rewards.starbucks.in/sign-in</a> or use the Starbucks India mobile app.</p>
+				<p>You are responsible for all transactions associated with your Starbucks Card, including unauthorized transactions. If your Starbucks Card is lost, stolen, destroyed or damaged, please access your 
+				<a href="../index.html">www.starbucks.in</a> account and report lost/stolen Starbucks Card, or contact us immediately at 022-65296888 or email to us at 
+				<a href="mailto:customercare@tatastarbucks.com">customercare@tatastarbucks.com</a>. Your Starbucks Card balance will be protected from the time you notify to 
+				us that your Starbucks Card is missing. We will freeze the remaining balance on your Starbucks Card at the time you report it lost/stolen. You must then take 
+				a new Starbucks Card from any of our stores in India and transfer the balance from the lost/stolen card onto your new card from your 
+				<a href="../index.html">www.starbucks.in</a> account.</p>
+				<h3>Blocking of Starbucks card:</h3><p>TSPL reserves the right to block your Starbucks card and/or discontinue, if TSPL determines or observes in its sole discretion 
+				that there has been any fraudulent or unauthorized activities on such card.</p><h3>Privacy Statement</h3><p>You hereby authorise TSPL to disclose your information to 
+				Government authorities or to competent authorities or to credit bureaus or to other third persons, to comply with the obligation under the law. You also authorise TSPL to
+				use your information for offering product and services to you, including from its associates/partners unless specified otherwise.</p><p>For information concerning how we collect, use and disclose 
+				information concerning the Starbucks Card and how to select privacy preferences regarding certain promotional communications, you should refer to our privacy statement mentioned on our website - 
+				<a title="Privacy Statement (EN)" href="learn-more/privacy-policy.html">Privacy Policy</a>.</p><h3>Changes to these Terms and Conditions</h3><p>TSPL reserves the right to add, alter, amend and 
+				revise terms and conditions as well as the rules and regulations governing the Starbucks Card without prior notice, and without assigning any reasons thereof. In the event of such changes, the 
+				latest terms &amp; conditions will be updated and viewed on our website <a href="../index.html">www.starbucks.in</a>.</p><h3>Cancellation of these Terms and Conditions</h3>
+				<p>We may suspend or terminate these terms and conditions and revoke or limit any or all of the rights and privileges granted to you at any time without notice or liability. 
+				Termination may also result from your fraudulent or unauthorized use of the Starbucks Card.</p><h3>Governing Law</h3>
+				<p>All disputes, in connection with Starbucks Card or its program shall be governed and construed in accordance with Indian Laws and are subject to the exclusive jurisdiction of 
+				Competent Courts at Mumbai only.</p><h3>Disclaimers and Limits of Liability</h3><p>TSPL and its affiliates make no representations, warranties or conditions of any kind, express or 
+				implied, with respect to the Starbucks Card, including, but not limited to, any implied warranty of merchantability, fitness for a particular purpose, title, or non-infringement, 
+				or any warranty arising by usage of trade, course of dealing or course of performance. TSPL does not represent or warrant that your Starbucks Cards will always be accessible or accepted.</p>
+				<p>In the event that TSPL or its affiliates are found liable to you, you shall only be entitled to recover actual and direct damages and such damages shall not exceed the last balance held on 
+				your Starbucks Card. TSPL and its affiliates shall have no liability for any incidental, indirect or consequential damages (including without limitation loss of profit, revenue or use) arising 
+				out of or in any way connected with this Agreement, whether in contract, warranty, tort (including negligence, whether active, passive or imputed), product liability, strict liability or other 
+				theory, even if we or our authorized representatives have been advised of the possibility of such damages. In no event shall TSPL or its affiliates have any liability for unauthorized access to, 
+				or alteration, theft or destruction of a Starbucks Card through accident, misuse or fraudulent means or devices by you or any third party, or as a result of any delay or mistake resulting from any 
+				circumstances beyond our control. TSPL is not liable for non-fulfilment of any terms in full or in part due to any reason beyond its control.</p>
+				<p>The laws of certain states or other jurisdiction do not allow limitations on implied warranties, or the exclusion or limitation of certain damages. If these laws apply, 
+				some or all of the above disclaimers, exclusions or limitations may not apply to you, and you may have rights in addition to those contained in this Terms and Conditions. 
+				In such jurisdiction, our liability is limited to the greatest extent permitted by law.</p><p>The decision of the management of TSPL is final and shall be binding at all times.</p>
+				<h3>Assignment</h3><p>We may assign all or part of these Terms and Conditions without such assignment being considered a change to these Terms and Conditions and without notice to you 
+				and shall be released from all liabilities The assignee shall have the same rights and obligations as the assignor and shall agree in writing to be bound by the Terms and Conditions.</p>
+				<h3>Entire Terms and Conditions, Construction</h3><p>These Terms and Conditions is the complete and exclusive between you and TSPL, and supersedes and merges all prior proposals and all or
+				any other prior arrangement/agreements. In the event that any provision of these Terms and Conditions shall be determined to be illegal or unenforceable, that provision will be eliminated to 
+				the minimum extent necessary so that these Terms and Conditions shall otherwise remain in full force, effect and shall be enforceable. Headings herein are for convenience of reference only and 
+				shall in no way affect interpretation of these Terms and Conditions.</p><h3>Copyright and Limited License</h3><p>Unless otherwise indicated, the Sites and all content and other materials therein, 
+				including, without limitation, the Starbucks logo, TATA logo and all designs, text, graphics, pictures, information, data, software, sound files, other files and the selection and arrangement thereof 
+				(collectively, "Site Materials") are the proprietary property of the Company or its licensors or users and are protected by Indian and international copyright laws.</p>
+				<p>You are granted a limited, non-sublicensable license to access and use the Sites and Site Materials for personal, informational and shopping purposes only. Such license is 
+				subject to the Terms of Use and does not include: (a) any resale or commercial use of the Sites or Site Materials; (b) the collection and use of any product listings, pictures or 
+				descriptions; (c) the distribution, public performance or public display of any Site Materials; (d) modifying or otherwise making any derivative uses of the Sites and the Site Materials, 
+				or any portion thereof; (e) use of any data mining, robots or similar data gathering or extraction methods; (f) downloading (other than the page caching) of any portion of the Sites, the Site Materials or any information contained therein, except as expressly permitted on the Sites; or (g) any use of the Sites or the Site Materials other than for its intended purpose. Any use of the Sites or Site Materials other than as specifically authorized herein, without the prior written permission of the Company, is strictly prohibited and will terminate the license granted herein. Such unauthorized use may also violate applicable laws, including, without limitation, copyright and trademark laws and applicable communications regulations and statutes. Unless explicitly stated herein, nothing in these Terms of Use shall be construed as conferring in any manner, whether by implication, estoppel or otherwise, any title or ownership of, or exclusive use-rights to, any intellectual property or other right and any goodwill associated therewith.</p><h3>Copyright Notice</h3><p>If you believe any material available via the Sites infringes a copyright you own or control, you may file a notification of such infringement at our contact details given below.</p><h3>Trademark Information</h3><p>The “Starbucks,” “Starbucks Coffee” and Siren Logo trademarks are owned by Starbucks Corporation and used by the Company under a license. The “TATA” mark and logo are owned by Tata Sons Limited and are used by the Company under a license from Tata Sons Limited. All other trademarks, service marks, domain names, logos, company names and indicia of origin referred to on the Sites are either trademarks, service marks, domain names, logos, company names or indicia of origin or are otherwise the property of the Company or its affiliates or licensors. Other product or company names referred to on the Sites may be trademarks of their respective owners. You may not use any trademark, service mark, domain name, logo, company name, trade name or indicia of origin of the Company, Starbucks Corporation, Tata Sons Limited or any third party without permission from the owner of the applicable trademark, service mark, domain name, logo, company name, trade name or indicia of origin. You may contact the Company by sending an e-mail to Customer Care or writing to</p><p>Tata Starbucks Private Limited, Customer Care - Tower C wing, 2nd floor, Times Square, Andheri Kurla Road, Gamdevi, Marol, Mumbai – 400059 to request written permission to use trademarks, indicia of origin and materials on the Sites for purposes other than stated in these Terms of Use or for all other questions relating to the Sites.</p><p>All rights not expressly granted are reserved.</p><p>In case of any grievances you can contact:</p><p>Tata Starbucks Private Limited - (Customer Care)
+<br />
+Tower C wing, 2nd floor,
+<br />
+Times Square, Andheri Kurla Road
+<br />
+Gamdevi, Marol, Mumbai – 400059.</p><p>For any Inquiries or Questions In case of any queries please send us an email at: <a href="mailto:customercare@tatastarbucks.com">customercare@tatastarbucks.com</a>.</p>
+            </div>
+    </div>   
+</article>
+
+    <!-- END: Main Region Content -->
+</div>
+<!-- END: Main Region -->
+            
+        </div>
+        
+    </div>
+    
+</main>
+<!-- BEGIN: Pre-Footer Region -->
+<div class="container">
+    <div class="grid">
+        <div class="column size12of12" typeof="Region" resource="PreFooter">
+            <!-- BEGIN: Pre-Footer Region Content -->
+            <div >
+        <ul class="breadcrumb" id="breadcrumb">
+                    <li class="breadcrumb__item"><a class="breadcrumb__link" href="https://card.starbucks.in/">Card</a></li>
+                            <li class="breadcrumb__item">Starbucks Card Terms &amp; Conditions</li>
+        </ul>
+</div>
+
+            <!-- END: Pre-Footer Region Content -->
+        </div>
+    </div>
+</div>
+<!-- END: Pre-Footer Region -->
+<footer id="footer" tabindex="0" class="footer">
+    <div class="footer-top">
+        
+    <div class="container" >
+    <div class="grid">
+        <ul class="sb-social-icons column size12of12 med_size4of12 ">
+                    <li class="facebook">
+                        <a href="https://www.facebook.com/starbucksindia"  title="Facebook">
+                            <span class="hidden_visually">Facebook</span>
+                        </a>
+                    </li>
+                    <li class="twitter">
+                        <a href="https://twitter.com/starbucksindia"  title="Twitter">
+                            <span class="hidden_visually">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="instagram">
+                        <a href="https://www.instagram.com/starbucksindia"  title="Instagram">
+                            <span class="hidden_visually">Instagram</span>
+                        </a>
+                    </li>
+        </ul>
+
+        
+    </div>
+</div>
+
+    </div>
+    <div class="footer-main">
+        <div class="container" >
+            <div class="grid">
+                
+<style>
+    @media (min-width: 768px) {
+        .footer_global {
+            background-image: url(../media/wordmark_footer_tcm87-397.png);
+        }
+    }
+</style>
+
+
+
+                <div class="footer_global accordion">
+                    
+<div class="info_block column size12of12 med_size4of12 lg_size2of12" >
+        <h4 >
+                <a href="../about-us.html" title="About Us" >
+                    About Us
+                </a>
+            <label for="footer_link_group_a5a3a4da-4ccf-4872-8f25-3342779a57f8" data-icon="&#x2304" tabindex="0"></label>
+        </h4>
+        <input id="footer_link_group_a5a3a4da-4ccf-4872-8f25-3342779a57f8" name="footer" type="radio" aria-hidden="true" />
+            <ol>
+                    <li >
+                        <a href="../about-us/our-heritage.html" title="Our HeritageInvestor Relations" >Our Heritage</a>
+                    </li>
+                    <li >
+                        <a href="../about-us/company-information.html" title="Our Company" >Our Company</a>
+                    </li>
+            </ol>
+</div>
+<div class="info_block column size12of12 med_size4of12 lg_size2of12" >
+        <h4 >
+                <a href="rewards/customer-service.html" title="Customer Service" >
+                    Customer Service
+                </a>
+            <label for="footer_link_group_e035d341-cac7-4354-9923-8f3c626bd76a" data-icon="&#x2304" tabindex="0"></label>
+        </h4>
+        <input id="footer_link_group_e035d341-cac7-4354-9923-8f3c626bd76a" name="footer" type="radio" aria-hidden="true" />
+            <ol>
+                    <li >
+                        <a href="../customer-service/frequently-asked-questions.html" title="Frequently Asked QuestionsWorking at Starbucks" >Frequently Asked Questions</a>
+                    </li>
+            </ol>
+</div>
+<div class="info_block column size12of12 med_size4of12 lg_size2of12" >
+        <h4 >
+Quick Links            <label for="footer_link_group_45d68164-c99b-4d5f-b550-efc24196ecbf" data-icon="&#x2304" tabindex="0"></label>
+        </h4>
+        <input id="footer_link_group_45d68164-c99b-4d5f-b550-efc24196ecbf" name="footer" type="radio" aria-hidden="true" />
+            <ol>
+                    <li >
+                        <a href="https://rewards.starbucks.in/store-locator" target="_blank" title="Store Locator" >Store Locator</a>
+                    </li>
+            </ol>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="grid">
+                
+
+<div class="column size12of12" >
+    <ul class="footer_sub">
+                <li >
+                    <a href="../about-us/company-information/online-policies/web-accessibility.html" title="Web Accessiblity" >Web Accessiblity</a>
+                </li>
+                <li >
+                    <a href="learn-more/privacy-policy.html" title="Privacy Statement" >Privacy Statement</a>
+                </li>
+                <li >
+                    <a href="../about-us/company-information/online-policies/terms-of-use.html" title="Terms of Use" target="_self">Terms of Use</a>
+                </li>
+                <li >
+                    <a href="../site-map.html" title="Site Map" >Site Map</a>
+                </li>
+                <li >
+                    <a href="rewards/customer-service.html" title="Contact Us" >Contact Us</a>
+                </li>
+    </ul>
+    <div id="teconsent" class="teconsent_showBorder">
+            <script async="async" type="text/javascript" src="http://consent.truste.com/notice?domain=starbucks.com&amp;c=teconsent&amp;text=true&amp;js=nj&amp;noticeType=bb&amp;country=in&amp;language=en" crossorigin></script>
+    </div>
+</div>
+
+<div class="column size12of12" >
+        <p class="footer_copyright" >&#169; 2022 Starbucks Coffee Company. All rights reserved.</p>
+</div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+    
+
+    <!-- BEGIN: Bottom JavaScript -->
+    
+    <script src="https://www.starbucks.in/ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../static/js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
+
+<script type="text/javascript" src="../static/js/framework.js"></script>
+    <script>
+    sb.namespace("config");
+    
+    sb.config.globalTextResources = {
+        closeButtonText: 'Close'
+    };
+</script>
+
+
+    
+
+    <script type="text/javascript" src="../static/js/main.js"></script>
+    <script type="text/javascript" src="../static/js/our-coffees.js"></script>
+    <!-- END: Bottom JavaScript -->
+</body>
+
+</html>

@@ -1,0 +1,657 @@
+
+<!DOCTYPE html>
+<!--[if IE 6]><html id="ie6" class="ie9 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]-->
+<!--[if IE 7]><html id="ie7" class="ie9 lt-ie10 lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if IE 8]><html id="ie8" class="ie8 lt-ie10 lt-ie9" lang="en"><![endif]-->
+<!--[if IE 9]><html id="ie9" class="ie9 lt-ie10"lang="en"><![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"671cca5e0f","applicationID":"899226958","transactionName":"NQMBZkJRXEAEAhJQCgxJLmRzH2JSAgQlVgsWFAxeXFVAHDUAAVw=","queueTime":0,"applicationTime":192,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"671cca5e0f",applicationID:"899226958"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https:///")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    
+<title>Starbucks Newsroom | Starbucks Coffee Company</title>
+
+    <!-- BEGIN: MetaData -->
+    
+            <meta property="og:title" content="Starbucks Newsroom | Starbucks Coffee Company" />
+            <meta name="twitter:card" content="summary">
+            <meta property="og:type" content="article" />
+            <meta property="og:locale" content="en" />
+            <meta property="og:image" content="https://www.starbucks.in/media/STB-mobile-apps-placeholder-image_tcm87-29367.PNG" />
+            <meta name="description" content="Starbucks Newsroom">
+            <meta property="og:description" content="Starbucks Newsroom" />
+<meta property="og:url" content="about-us/company-information/newsroom" />
+    <meta property="og:site_name" content="Starbucks Coffee Company" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- END: MetaData -->
+    <!-- BEGIN: CSS -->
+        <link href="http://fonts.googleapis.com/css?family=Lato:400,700|Crete+Round:400,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../../static/css/main.css">
+    
+    <!-- END: CSS -->
+    <!-- BEGIN: Favicons -->
+    <link rel="shortcut icon" type="image/x-icon" href="../../static/images/favicon.ico" />
+<link rel="apple-touch-icon" href="../../static/images/touch-icon-iphone.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="../../static/images/touch-icon-ipad.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="../../static/images/touch-icon-iphone4.png" />
+    <!-- END: Favicons -->
+    <!-- BEGIN: Top JavaScript -->
+    <script type="text/javascript" src="../../static/js/vendor/modernizr.min.js"></script>
+<script>
+    document.createElement("picture");
+</script>
+<script src="../../static/js/vendor/picturefill.min.js" async></script>
+    
+    <!-- END: Top JavaScript -->
+</head>
+<body>
+    
+<!--[if lte IE 8]>
+<aside class="notificationBar notificationBar--oldBrowser">
+    <div >
+        <section class="validation">
+            <div class="validation_summary warning">
+                <h2 class="validation_summary_title" >You may want to update your browser</h2>
+                <div >
+                    <p>You’re using an older browser. Starbucks will work better for you if you <a href="http://windows.microsoft.com/en-gb/internet-explorer/download-ie">upgrade your browser</a> or switch to another browser.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</aside>
+<![endif]-->
+
+<div id="consent_blackbar"></div>
+
+<aside class="notificationBar notificationBar--shop">
+</aside>
+
+<header class="header_container">
+    <div class="container">
+        <div class="grid">
+            <div class="column size12of12">
+                <div class="" id="header">
+                    <ul class="skip">
+                        <li><a href="newsroom.html#nav">skip to Main Navigation</a></li>
+                        <li><a href="newsroom.html#content">skip to Main Content</a></li>
+                        <li><a href="newsroom.html#footer">skip to Footer</a></li>
+                    </ul>
+                    <div >
+        <a href="../../index.html" id="logo" rel="home" title="Starbucks Logo"  >
+<img src="../../media/logo_tcm87-366_w1024_n.png" alt="Logo" data-aspect="0" class="logo" />        </a>
+</div>
+
+                    <div id="utilities" >
+        <ul class="utility_list">
+                        <li class="utility_link store_locator">
+                            <a href="https://rewards.starbucks.in/store-locator" target="_blank" title="Find A Store"  ><span aria-hidden="true" data-icon="&#x272a"></span><span class="hidden_visually med_render_visually">Find A Store</span></a>
+                        </li>
+        </ul>
+</div>
+
+                    <nav id="nav" >
+    <div class="nav_control">
+        <a href="newsroom.html#nav">
+            <span class="hamburger"></span>
+            <span class="hidden_visually">Navigation</span>
+        </a>
+    </div>
+    <div class="nav_menu">
+            <ul>
+                    <li id="nav_0">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../../coffee.html"><strong>Coffee</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_1">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../../menu-list.html"><strong>Menu</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_2">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../../coffeehouse.html"><strong>Coffeehouse</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_3">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../../responsibility.html"><strong>Responsibility</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_4">
+                        <div class="null_left"></div>
+                            <a class="tab" href="https://rewards.starbucks.in/" target="_blank"><strong>Rewards</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_5">
+                        <div class="null_left"></div>
+                            <a class="tab" href="https://careers.starbucks.in/" target="_blank"><strong>Careers</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_6">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../../Starbucks-Seasons-Gifting.html"><strong>Starbucks Season&#39;s Gifting</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_7">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../../starbucks-delivers.html"><strong>Starbucks Delivers</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+                    <li id="nav_8">
+                        <div class="null_left"></div>
+                            <a class="tab" href="../../about-us.html"><strong>About Us</strong></a>
+                        <div class="null_right"></div>
+                    </li>
+            </ul>
+    </div>
+</nav>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="menus" class="megaNav">
+        <ol class="container">
+                <li class="fields" id="menu_0">
+                        <div class="region size4of5 menu_content">
+                            <ol class="blocks blocks-four-up">
+                                    <li>
+                                        <p>
+                                                <a href="../../coffee/our-coffees.html">Our Coffees</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../../coffee/our-coffees/format/via.html">Starbucks VIA&#174;</a></li>
+                                                    <li><a href="../../coffee/our-coffees/format/whole-bean.html">Whole Bean Coffee</a></li>
+                                                    <li><a href="../../coffee/our-coffees/view-all-coffees.html">View All Coffees</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../coffee/finder.html">Find Your Perfect Coffee</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../coffee/espresso.html">Espresso</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../../coffee/espresso/ingredients.html">The Ingredients</a></li>
+                                                    <li><a href="../../coffee/espresso/best-equipment.html">The Best Equipment</a></li>
+                                                    <li><a href="../../coffee/espresso/who-makes-it.html">Who Makes It</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../coffee/how-to-brew.html">How to Brew Great Coffee</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/coffee/how-to-brew/coffee-press.html">Coffee Press</a></li>
+                                                    <li><a href="https://www.starbucks.in/coffee/how-to-brew/pour-over.html">Pour-Over</a></li>
+                                                    <li><a href="https://www.starbucks.in/coffee/how-to-brew/iced-pour-over.html">Iced Pour-Over</a></li>
+                                                    <li><a href="https://www.starbucks.in/coffee/how-to-brew/coffee-brewer.html">Coffee Brewer</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../coffee/ethical-sourcing.html">Ethical Sourcing</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/coffee-sourcing.html">Coffee</a></li>
+                                                    <li><a href="../../coffee/ethical-sourcing/coffee-quality.html">Coffee Quality</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/farmer-support.html">Farmer Support</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../card/rewards/customer-service.html">Learn More</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../../coffee/learn/roast.html">Starbucks Roast Spectrum</a></li>
+                                                    <li><a href="../../coffee/learn/coffee-form.html">Coffee by Form</a></li>
+                                                    <li><a href="../../coffee/learn/flavors-in-your-cup.html">Flavors in Your Cup</a></li>
+                                                    <li><a href="../../coffee/learn/coffee-faqs.html">Coffee FAQ</a></li>
+                                            </ol>
+                                    </li>
+                            </ol>
+                                <p class="menu_suggestion_title">
+Looking for Coffee Beverages?                                </p>
+                                    <ul class="menu_suggestion_links">
+                                            <li class="navGroup_menu_sugList_item">
+                                                    <a class="link" href="https://www.starbucks.in/menu-list/drinks/index.html"  >Drinks</a>
+                                            </li>
+                                    </ul>
+                        </div>
+                            <div class="region size1of5 menu_promo">
+                                    <div class="anchor">
+                                        
+                                    </div>
+                            </div>
+                </li>
+                <li class="fields" id="menu_1">
+                        <div class="region size4of5 menu_content">
+                            <ol class="blocks blocks-four-up">
+                                    <li>
+                                        <p>
+                                                <a href="../../menu-list/drinks.html">Drinks</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Featured_Beverages.html">Featured Beverages</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Espresso_Beverages.html">Espresso</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Freshly_Brewed_Coffee.html">Freshly Brewed Coffee</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Coffee_Frappuccino.html">Coffee Frappuccino&#174;</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Creme_Frappuccino.html">Cr&#232;me Frappuccino&#174;</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Other_Beverages.html">Other Beverages</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Cold_Brew.html">Cold Brew</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Teavana_Tea.html">Teavana&#174; Tea</a></li>
+                                                    <li><a href="https://www.starbucks.in/menu-list/drinks/Iced_Shaken.html">Iced Shaken</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../menu-list/food-list.html">Food</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../../menu-list/food-list/featured-food.html">Featured Food</a></li>
+                                                    <li><a href="../../menu-list/food-list/Sweet_Bakery_Food.html">Sweet Bakery</a></li>
+                                                    <li><a href="../../menu-list/food-list/Savoury_Bakery_food.html">Savoury Bakery</a></li>
+                                                    <li><a href="../../menu-list/food-list/Sandwiches_Wraps.html">Sandwiches &amp; Wraps</a></li>
+                                                    <li><a href="../../menu-list/food-list/Salads_Muesli.html">Salads &amp; Muesli</a></li>
+                                                    <li><a href="../../menu-list/food-list/Desserts.html">Desserts</a></li>
+                                            </ol>
+                                    </li>
+                            </ol>
+                                <p class="menu_suggestion_title">
+                                </p>
+                        </div>
+                            <div class="region size1of5 menu_promo">
+                                    <div class="anchor">
+                                        
+                                    </div>
+                            </div>
+                </li>
+                <li class="fields" id="menu_2">
+                        <div class="region size4of5 menu_content">
+                            <ol class="blocks blocks-four-up">
+                                    <li>
+                                        <p>
+                                                <a href="../../coffeehouse/wireless-internet.html">Wireless Internet</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../store-locator/search.html">Store Locations</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../coffeehouse/store-design.html">Store Design</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="../../coffeehouse/store-design/fort-mumbai.html">Fort – Mumbai</a></li>
+                                                    <li><a href="../../coffeehouse/store-design/indiranagar-bangalore.html">Indiranagar Bangalore</a></li>
+                                                    <li><a href="../../coffeehouse/store-design/koregaon-park-pune.html">Koregaon Park Pune</a></li>
+                                                    <li><a href="../../coffeehouse/store-design/hamilton-house-delhi.html">Hamilton House Delhi</a></li>
+                                                    <li><a href="../../coffeehouse/store-design/jubiliee-hills-hyderabad.html">Jubiliee Hills Hyderabad</a></li>
+                                                    <li><a href="../../coffeehouse/store-design/phoenix-market-city-chennai.html">Phoenix Market City Chennai</a></li>
+                                                    <li><a href="../../coffeehouse/store-design/park-mansions-kolkata.html">Park Mansions Kolkata</a></li>
+                                            </ol>
+                                    </li>
+                            </ol>
+                                <p class="menu_suggestion_title">
+                                </p>
+                        </div>
+                            <div class="region size1of5 menu_promo">
+                                    <a href="../../card/mobile_application_campaign.html"  >
+                                                <p><img src="../../media/promomobile_tcm87-27713.png" alt="Starbucks app on mobile device" /></p>
+        <p><strong>Starbucks&#174; India Mobile app</strong></p>
+        <p>Scan, pay and earn rewards. It’s that simple. Get our mobile app today!</p>
+
+                                    </a>
+                            </div>
+                </li>
+                <li class="fields" id="menu_3">
+                        <div class="region size4of5 menu_content">
+                            <ol class="blocks blocks-four-up">
+                                    <li>
+                                        <p>
+                                                <a href="https://www.starbucks.in/responsibility/community.html">Community</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/responsibility/community/local-area-engagement.html">Local Area Engagement</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/community/Empowering-Girls-And-Young-Women.html">Empowering Girls And Young Women</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/community/swastha.html">Swastha</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/community/chai-project.html">Chai Project</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="https://www.starbucks.in/responsibility/ethical-sourcing.html">Ethical Sourcing</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/coffee-sourcing.html">Coffee Sourcing</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/farmer-support.html">Farmer Support</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/tea-sourcing.html">Tea Sourcing</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/ethical-sourcing/cocoa-sourcing.html">Cocoa Sourcing</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="https://www.starbucks.in/responsibility/environment.html">Environment</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/responsibility/environment/recycling.html">Recycling</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/environment/energy.html">Energy</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/environment/water.html">Water</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/environment/green-building.html">Green Building</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/environment/climate-change.html">Climate Change</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="https://www.starbucks.in/responsibility/diversity.html">Diversity</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../../card/rewards/customer-service.html">Learn More</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="https://www.starbucks.in/responsibility/learn-more/shared-planet.html">Starbucks Shared Planet</a></li>
+                                                    <li><a href="https://www.starbucks.in/responsibility/learn-more/policies.html">Policies</a></li>
+                                            </ol>
+                                    </li>
+                            </ol>
+                                <p class="menu_suggestion_title">
+                                </p>
+                        </div>
+                            <div class="region size1of5 menu_promo">
+                                    <div class="anchor">
+                                        
+                                    </div>
+                            </div>
+                </li>
+                <li class="fields" id="menu_4">
+                </li>
+                <li class="fields" id="menu_5">
+                </li>
+                <li class="fields" id="menu_6">
+                </li>
+                <li class="fields" id="menu_7">
+                </li>
+                <li class="fields" id="menu_8">
+                        <div class="region size4of5 menu_content">
+                            <ol class="blocks blocks-four-up">
+                                    <li>
+                                        <p>
+                                                <a href="../our-heritage.html">Our Heritage</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                <a href="../company-information.html">Our Company</a>
+                                        </p>
+                                            <ol>
+                                                    <li><a href="mission-statement.html">Mission Statement</a></li>
+                                                    <li><a href="newsroom.html">Starbucks Newsroom</a></li>
+                                                    <li><a href="business-ethics-and-compliance.html">Business Ethics and Compliance</a></li>
+                                                    <li><a href="online-policies.html">Online Policies</a></li>
+                                            </ol>
+                                    </li>
+                                    <li>
+                                        <p>
+                                                 <a href="https://careers.starbucks.in/" target="_blank">Career Center</a>
+                                        </p>
+                                    </li>
+                            </ol>
+                                <p class="menu_suggestion_title">
+                                </p>
+                        </div>
+                            <div class="region size1of5 menu_promo">
+                                    <div class="anchor">
+                                        
+                                    </div>
+                            </div>
+                </li>
+        </ol>
+</div>
+
+
+
+
+<main class="main" id="main">
+    <div class="container">
+        
+        <div class="grid">
+            
+
+<!-- BEGIN: Main Region -->
+
+<div class="column lg_size8of12" typeof="Region" resource="Main">
+    <!-- BEGIN: Main Region Content -->
+<!--COMPONENT: Video -->
+<section class="video" >
+        <div class="container container--videoTitle">
+            <div class="grid">
+                <div class="column size11of12">
+                        <h1  class="video__title">Starbucks Newsroom</h1>
+                                            <h2  class="video__subTitle">News</h2>
+                </div>
+            </div>
+        </div>
+    <div class="container container--video">
+        <div class="grid">
+            <div class="column size12of12">
+                <div >
+                        <a href="../../video/play/5448064600001.html" class="js-videoLink video_image_link" data-video="5448064600001" >
+                            <img src="../../media/STB-mobile-apps-placeholder-image_tcm87-29367_w1024_n.png" alt="My Card Mobile App" data-aspect="0"  />
+                        </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="container container--videoCaption">
+            <div class="grid">
+                <div class="column size11of12">
+                    <div class="video__caption rtf" >
+                        <p>March 20, 2018</p><p><a title="Press_Release_Tata_Starbucks_Enters_Kolkata_With_Three_New_Stores" href="../../media/Press_Release_Tata_Starbucks_Enters_Kolkata_With_Three_New_Stores_tcm87-35901.pdf">Tata Starbucks Enters Kolkata With Three New Stores</a></p><p>KOLKATA, 20 March, 2018 - Tata Starbucks Private Limited, the 50/50 joint venture between Starbucks Coffee Company (Nasdaq: SBUX) and Tata Global Beverages Limited, will welcome its customers in Kolkata for the first time on March 21.  Delivering the iconic ‘Third Place’ experience to customers and stewarding the company’s commitment to the city, Tata Starbucks will open three stores, marking the seventh city for the company in India.</p><p><a title="Press_Release_Tata_Starbucks_Enters_Kolkata_With_Three_New_Stores" href="../../media/Press_Release_Tata_Starbucks_Enters_Kolkata_With_Three_New_Stores_tcm87-35901.pdf">(more)</a></p><p>October 25, 2017</p><p><a title="Tata Starbucks Reaffirms Growth in India with Entry into Kolkata in 2018 and Commitment to Social Impact Programs" href="../../media/Press_Release_20_Oct17_tcm87-34071.pdf">Tata Starbucks Reaffirms Growth in India with Entry into Kolkata in 2018 and Commitment to Social Impact Programs</a></p><p>Mumbai, 24 October, 2017: Tata Starbucks Private Limited, the 50/50 joint venture between Starbucks Coffee Company (Nasdaq: SBUX) and Tata Global Beverages Limited, today celebrated the opening of its 100th store located in Mumbai and its five-year anniversary in India with a series of strategic initiatives that reaffirm its long-term commitment to the market.</p><p>(<a title="Tata Starbucks Reaffirms Growth in India with Entry into Kolkata in 2018 and Commitment to Social Impact Programs" href="../../media/Press_Release_20_Oct17_tcm87-34071.pdf">more</a>)</p><p><br /></p><p>March 15, 2017</p><p><a title="Starbucks Brings Mobile Payment" href="../../media/Starbucks&#32;Brings&#32;Mobile&#32;Payment&#32;to&#32;India&#32;with&#32;its&#32;Mobile&#32;App&#32;14&#32;02&#32;17_tcm87-27902.pdf">Starbucks Brings Mobile Payment to India with the launch of the Starbucks® India Mobile App</a></p><p>Mumbai, 15 March, 2017: Tata Starbucks Private Limited today introduced the Starbucks® India mobile app across the country, giving customers a fast and convenient way to pay for in-store purchases and earn Stars through the loyalty program using their mobile device. The move makes Tata Starbucks the first major retailer in India to offer customers a mobile payment option linked to a loyalty program and further expands Starbucks robust global digital ecosystem.</p><p>(<a title="Starbucks Brings Mobile Payment" href="../../media/Starbucks&#32;Brings&#32;Mobile&#32;Payment&#32;to&#32;India&#32;with&#32;its&#32;Mobile&#32;App&#32;14&#32;02&#32;17_tcm87-27902.pdf">more</a>)</p><p><br /></p><p>January 18, 2017</p>
+						<p><a title="Teavana170117" href="../../media/Starbucks&#32;Teavana&#32;India&#32;Launch&#32;Press&#32;Release&#32;170117_tcm87-27543.pdf">Starbucks Unveils a Modern Tea Experience with the Debut of Starbucks® Teavana™ in India</a></p>
+						<p>Mumbai, 18 January 2017: Tata Starbucks Pvt. Ltd. today announced the introduction of Starbucks® Teavana™ beverages as a core offering across its 88 stores in India. The launch of Starbucks® Teavana™ brings for the 
+						very first time an entirely modern and reimagined tea experience for Indian customers, giving them the opportunity to enjoy a range of 18 distinct tea offerings including an Indian signature tea, iced teas, brewed hot 
+						teas and tea lattes with bold, layered flavors handcrafted in the way only Starbucks can.</p>
+						<p>(<a title="Teavana170117" href="../../media/Starbucks&#32;Teavana&#32;India&#32;Launch&#32;Press&#32;Release&#32;170117_tcm87-27543.pdf">more</a>)</p><p><br /></p><p>June 27, 2016</p><p><a title="1-TheTatagroupandStarbucksCoffeeCompanyStrengthenGlobalPartnershipwithMultipleNewCommitments" href="../../media/1-TheTatagroupandStarbucksCoffeeCompanyStrengthenGlobalPartnershipwithMultipleNewCommitments_tcm87-16176.pdf">The Tata group and Starbucks Coffee Company Strengthen Global Partnership with Multiple New Commitments</a></p><p>MUMBAI and SEATTLE, June 27 2016: In a meeting at the iconic Starbucks Reserve® Roastery and Tasting Room in Seattle, Washington, chairman and chief executive officer of Starbucks Coffee Company (NASDAQ: SBUX), Howard Schultz, and chairman, Tata Sons Limited, Cyrus Mistry, announced multiple new joint initiatives last week which expand the existing Tata and Starbucks relationship and strengthen the companies’ commitment to developing the Tata-Starbucks brand and building a different kind of company in India.</p><p><a title="1-TheTatagroupandStarbucksCoffeeCompanyStrengthenGlobalPartnershipwithMultipleNewCommitments" href="../../media/1-TheTatagroupandStarbucksCoffeeCompanyStrengthenGlobalPartnershipwithMultipleNewCommitments_tcm87-16176.pdf">(more)</a></p><p><br /></p><p>May 2, 2016</p><p><a title="2-TataStarbucksAnnouncesFive-dayWorkSchedule" href="../../media/2-TataStarbucksAnnouncesFive-dayWorkSchedule_tcm87-16177.pdf">Tata Starbucks announces five-day work schedule</a></p><p>Mumbai, May 2,2016: TATA Starbucks Private Limited today announced a bold step towards elevating its partner (employees) experience by adopting a five day work schedule for all of their 1,200+ partners across all TATA Starbucks stores with effect from 15th May, 2016. The move gives partners additional 52 personal days off and greater flexibility in their lives. The five day work schedule marks a first-of-a-kind initiative for a food and beverage retailer in India.</p><p><a title="2-TataStarbucksAnnouncesFive-dayWorkSchedule" href="../../media/2-TataStarbucksAnnouncesFive-dayWorkSchedule_tcm87-16177.pdf">(more)</a></p><p><br /></p><p>December 17, 2015</p><p><a title="3-TataStarbucksLeadershipChanges" href="../../media/3-TataStarbucksLeadershipChanges_tcm87-16178.pdf">Tata Starbucks Leadership Changes</a></p><p>Mumbai, 17 December 2015: In October, we celebrated the third anniversary of Tata-Starbucks. We are encouraged by how our customers in India have embraced the unique Starbucks Experience in this strategic market with great enthusiasm. Please find attached a letter which Avani Davda, ceo, Tata-Starbucks shared today with the company’s 1,400 partners (employees) in India announcing her decision to pursue opportunities outside of the company. The Tata-Starbucks Board has deep appreciation for what she has done to firmly position Starbucks as the premier coffeehouse in India. In her letter, Avani also announced that Sumi Ghosh has been appointed by the Tata-Starbucks Board as the new ceo of Tata-Starbucks effective January 1, 2016. An eight-year Starbucks partner, he most recently served as the vice president of Starbucks Midwestern U.S. region. Sumi brings three decades of consumer retail experience, including 10 years in brand management and operational leadership roles.</p><p>Avani and Sumi will work closely together through early February during this transition. As Starbucks fastest-growing new market, we are taking a long-term view in India and believe there is a tremendous opportunity ahead of us. We wish Avani great success in her future endeavors and welcome Sumi to the Tata-Starbucks family.</p><p><a title="3-TataStarbucksLeadershipChanges" href="../../media/3-TataStarbucksLeadershipChanges_tcm87-16178.pdf">(more)</a></p><p><br /></p><p>August 27, 2015</p><p><a title="4-TataStarbucksHostsFirstCoffeeChampionshipinIndia" href="../../media/4-TataStarbucksHostsFirstCoffeeChampionshipinIndia_tcm87-16179.pdf">Tata Starbucks hosts first Coffee Championship in India</a></p><p>Mumbai, 27 August 2015:Tata Starbucks Pvt. Ltd. hosted the grand finale of the first Starbucks Coffee Championship in India, giving its partners an opportunity to compete with each other on their expertise and knowledge of coffee along with the accuracy of their beverage crafting skills. After many competitive regional rounds testing their coffee skills and acumen, Saili Rane from Starbucks store at Mumbai Domestic Airport earned the title of the ‘Starbucks Coffee Champion’. Rubeena Qureshi from Starbucks at Bandra, Mumbai and Shikhar Hali from Starbucks at Mantri Mall, Bangalore were announced as the runner ups.</p><p><a title="4-TataStarbucksHostsFirstCoffeeChampionshipinIndia" href="../../media/4-TataStarbucksHostsFirstCoffeeChampionshipinIndia_tcm87-16179.pdf">(more)</a></p><p><br /></p><p>July 23, 2015</p><p><a title="5-StarbucksStrengthensIndiaCommitmentWithOpeningOf75" href="../../media/5-StarbucksStrengthensIndiaCommitmentWithOpeningOf75_tcm87-16180.pdf">Starbucks Strengthens India Commitment with Opening of 75th</a></p><p>MUMBAI, July 23, 2015: Tata Starbucks Private Limited, the 50/50 joint venture between Starbucks Coffee Company (Nasdaq: SBUX) and Tata Global Beverages Limited, celebrates the opening of the 75th Starbucks store in India. The store located in Mumbai at Bandra, also marks the opening of the 27th store in the city and the 3rd in the buzzing locality of Bandra and Santacruz. With 75 stores now operational across 6 cities, Tata Starbucks Private Limited continues to grow in the market with a commitment to offer the unique Starbucks Experience, unparalleled service, handcrafted beverages, and extensive food offerings to coffee lovers across the country.</p><p><a title="5-StarbucksStrengthensIndiaCommitmentWithOpeningOf75" href="../../media/5-StarbucksStrengthensIndiaCommitmentWithOpeningOf75_tcm87-16180.pdf">(more)</a></p><p><br /></p><p>June 15, 2015</p><p><a title="6-MessageFromAvaniDavdaCEOTataStarbucksPrivateLtdToAllStarbucksCustomersInIndia" href="../../media/6-MessageFromAvaniDavdaCEOTataStarbucksPrivateLtdToAllStarbucksCustomersInIndia_tcm87-16181.pdf">Message from Avani Davda, CEO, Tata Starbucks Private Ltd to all Starbucks customers in India</a></p><p>Mumbai, June 15, 2015: Dear Starbucks Customers, I know that many of you have seen the articles appearing in the press that raise concerns about the safety of products by several brands in the food &amp; beverage industry including Tata Starbucks. Let me take this opportunity to reassure you that our all of the products we serve are safe and meet Starbucks and Tata’s global quality standards.</p><p><a title="6-MessageFromAvaniDavdaCEOTataStarbucksPrivateLtdToAllStarbucksCustomersInIndia" href="../../media/6-MessageFromAvaniDavdaCEOTataStarbucksPrivateLtdToAllStarbucksCustomersInIndia_tcm87-16181.pdf">(more)</a></p><p><br /></p><p>September 15, 2014</p><p><a title="7-TataStarbucksLimitedCommitsToCreatingThrivingLocalNeighborhoods" href="../../media/7-TataStarbucksLimitedCommitsToCreatingThrivingLocalNeighborhoods_tcm87-16182.pdf">Tata Starbucks Limited commits to creating thriving local neighborhoods</a></p><p>Mumbai, September 15, 2014: As part of the celebrations for the opening of the 50th Starbucks store in India, Tata Starbucks Limited - the 50/50 joint venture between Starbucks Coffee Company (Nasdaq: SBUX) and Tata Global Beverages Limited – recently completed a full month of community service with its partners (employees) and partner organizations. The Month of Community Service, which took place from 20th July to 19th August 2014, saw more than 1000 partners from 50 Starbucks stores across Mumbai, Delhi NCR, Bangalore and Pune come together to take action to make a positive impact in the neighborhoods local to their stores. The activity was then supplemented by a cleaning activity of Girgaum Chowpatty beach on 09th September 2014 with around 40 partners following the Ganesh Visarjan festivities.</p><p><a title="7-TataStarbucksLimitedCommitsToCreatingThrivingLocalNeighborhoods" href="../../media/7-TataStarbucksLimitedCommitsToCreatingThrivingLocalNeighborhoods_tcm87-16182.pdf">(more)</a></p><p><br /></p><p>July 08, 2014</p><p><a title="8-TataStarbucksLimitedCelebrates50StarbucksStoreInIndiaWithItsForayInChennai" href="../../media/8-TataStarbucksLimitedCelebrates50StarbucksStoreInIndiaWithItsForayInChennai_tcm87-16183.pdf">Tata Starbucks Limited celebrates 50 Starbucks store in India with its foray in Chennai</a></p><p>MUMBAI; July 08, 2014 – Tata Starbucks Limited, the 50/50 joint venture between Starbucks Coffee Company (Nasdaq: SBUX) and Tata Global Beverages Limited, today celebrates the opening of the 50th Starbucks store in India with the launch of its first store at Phoenix Market City, Velachery, Chennai. The company will continue to open more stores and thoughtfully grow in the market with a commitment to offer the unique Starbucks Experience, unrivalled service, handcrafted beverages, extensive food offerings and distinct Third Place, to coffee lovers across the country.</p><p><a title="8-TataStarbucksLimitedCelebrates50StarbucksStoreInIndiaWithItsForayInChennai" href="../../media/8-TataStarbucksLimitedCelebrates50StarbucksStoreInIndiaWithItsForayInChennai_tcm87-16183.pdf">(more)</a></p><p><br /></p><p>Jan 20, 2014</p><p><a title="9-TataStarbucksLtd.OpensTwoMoreStoresInBengaluru" href="../../media/9-TataStarbucksLtd.OpensTwoMoreStoresInBengaluru_tcm87-16184.pdf">Tata Starbucks Ltd. Opens Two More Stores In Bengaluru</a></p><p>Bengaluru; January 20, 2014 – Tata Starbucks Limited, the 50/50 joint venture between Starbucks Coffee Company (Nasdaq: SBUX) and Tata Global Beverages Limited, today announced its expansion in the garden city of Bengaluru with the launch of two more Starbucks stores. Strategically located at Phoenix Market City and Brigade Orion Mall, the stores are designed to bring to life Bengaluru’s rich coffee heritage and provide an unparalleled coffeehouse experience.</p><p><a title="9-TataStarbucksLtd.OpensTwoMoreStoresInBengaluru" href="../../media/9-TataStarbucksLtd.OpensTwoMoreStoresInBengaluru_tcm87-16184.pdf">(more)</a></p><p><br /></p><p>Nov 22, 2013</p><p><a title="10-TataStarbucksLimitedContinuesExpansionInIndiaWithTheOpeningOfTheMuchAnticipatedFlagshipStoreInTheBeautifulGardenCityOfBengaluru" href="../../media/10-TataStarbucksLimitedContinuesExpansionInIndiaWithTheOpeningOfTheMuchAnticipatedFlagshipStoreInTheBeautifulGardenCityOfBengaluru_tcm87-16185.pdf">Tata Starbucks Limited Continues Expansion In India With The Opening Of The Much Anticipated Flagship Store In The Beautiful “Garden City” Of Bengaluru</a></p><p>BENGALURU, INDIA; November 22, 2013 – Tata Starbucks Limited, the 50/50 joint venture between Starbucks Coffee Company (Nasdaq: SBUX) and Tata Global Beverages Limited, today celebrates its entry into Bengaluru. Celebrating the heritage of the city, this flagship store is located opposite Raheja Arcade, 7th Block, Koramangala in Bengaluru and opens to customers on Saturday, November 23, 2013. In addition to the flagship store at Koramangala, Tata Starbucks Limited will open two more stores by the end of the year at Phoenix Market City and Orion Mall at Brigade Gateway in Bengaluru.</p><p><a title="10-TataStarbucksLimitedContinuesExpansionInIndiaWithTheOpeningOfTheMuchAnticipatedFlagshipStoreInTheBeautifulGardenCityOfBengaluru" href="../../media/10-TataStarbucksLimitedContinuesExpansionInIndiaWithTheOpeningOfTheMuchAnticipatedFlagshipStoreInTheBeautifulGardenCityOfBengaluru_tcm87-16185.pdf">(more)</a></p><p><br /></p><p>Oct 21, 2013</p><p><a title="11-StarbucksCelebratesItsFirstYearAnniversaryInIndiaReinforcingLongTermCommitmentToTheMarketWithLaunchOfIndiaEstatesBlend" href="../../media/11-StarbucksCelebratesItsFirstYearAnniversaryInIndiaReinforcingLongTermCommitmentToTheMarketWithLaunchOfIndiaEstatesBlend_tcm87-16186.pdf">Starbucks Celebrates Its First Year Anniversary In India, Reinforcing Long-Term Commitment To The Market With Launch Of India Estates Blend</a></p><p>MUMBAI; October 21, 2013: Tata Starbucks Limited, the 50/50 joint venture between Starbucks Coffee Company (Nasdaq: SBUX) and Tata Global Beverages Limited, is celebrating its first anniversary in the Indian market. To celebrate its India journey, the company has created a special India sourced coffee, aptly named India Estates Blend, as a tribute to its customers, partners, coffee producers and roasters.</p><p><a title="11-StarbucksCelebratesItsFirstYearAnniversaryInIndiaReinforcingLongTermCommitmentToTheMarketWithLaunchOfIndiaEstatesBlend" href="../../media/11-StarbucksCelebratesItsFirstYearAnniversaryInIndiaReinforcingLongTermCommitmentToTheMarketWithLaunchOfIndiaEstatesBlend_tcm87-16186.pdf">(more)</a></p><p><br /></p><p>Sept 10, 2013</p><p><a title="12-TataStarbucksLtd.ExpandsItsPresenceInMumbaiWithNewStores" href="../../media/12-TataStarbucksLtd.ExpandsItsPresenceInMumbaiWithNewStores_tcm87-16187.pdf">Tata Starbucks Ltd. Expands Its Presence In Mumbai With New Stores</a></p><p>MUMBAI; September 10, 2013 – Tata Starbucks Limited, the 50/50 joint venture between Starbucks Coffee Company (Nasdaq: SBUX) and Tata Global Beverages Limited, opens two more stores in Mumbai. Continuing its focused expansion in the market, the two new stores located in Bandra and Juhu promise to offer more avenues for customers to enjoy the highest quality coffeehouse experience in their neighborhood.</p><p><a title="12-TataStarbucksLtd.ExpandsItsPresenceInMumbaiWithNewStores" href="../../media/12-TataStarbucksLtd.ExpandsItsPresenceInMumbaiWithNewStores_tcm87-16187.pdf">(more)</a></p><p><br /></p><p>Sept 5, 2013</p><p><a title="13-TataStarbucksLtd.BringsStarbucksToPune" href="../../media/13-TataStarbucksLtd.BringsStarbucksToPune_tcm87-16188.pdf">Tata Starbucks Ltd. Brings Starbucks To Pune</a></p><p>PUNE; September 5, 2013 – Tata Starbucks Limited, the 50/50 joint venture between Starbucks Coffee Company (Nasdaq: SBUX) and Tata Global Beverages Limited is launching the first Starbucks® store in Pune this Sunday. Celebrating the cultural history of the city, this flagship store is located off North Main Road at Koregaon Park – a popular neighborhood in Pune – and promises to offer coffee lovers an enriching and elevated coffeehouse experience. The store will open on Sunday, September 8, 2013 and will be open to customers from 7 AM till 11 PM every day.</p><p><a title="13-TataStarbucksLtd.BringsStarbucksToPune" href="../../media/13-TataStarbucksLtd.BringsStarbucksToPune_tcm87-16188.pdf">(more)</a></p><p><br /></p><p>July 22, 2013</p><p><a title="14-TataStarbucksLimitedWelcomesManmeetVohraAsDirectorMarketingAndCategory" href="../../media/14-TataStarbucksLimitedWelcomesManmeetVohraAsDirectorMarketingAndCategory_tcm87-16189.pdf">Tata Starbucks Limited Welcomes Manmeet Vohra As Director - Marketing And Category</a></p><p>MUMBAI; July 22, 2013 – Tata Starbucks Limited, the 50/50 joint venture between Starbucks Coffee Company (Nasdaq: SBUX) and Tata Global Beverages Limited, today announced the appointment of Manmeet Vohra as its new Director - Marketing and Category. In her new role, Manmeet will lead all marketing and category aspects for the company in India. Prior to this, she was the Marketing Director at TAG Heuer and brings with her eleven years of extensive marketing experience in the luxury industry.</p><p><a title="14-TataStarbucksLimitedWelcomesManmeetVohraAsDirectorMarketingAndCategory" href="../../media/14-TataStarbucksLimitedWelcomesManmeetVohraAsDirectorMarketingAndCategory_tcm87-16189.pdf">(more)</a></p><p><br /></p><p>July 10, 2013</p><p><a title="15-StarbucksExpandsItsFootprintWithTheOpeningOfItsFirstStoreInGurgaon" href="../../media/15-StarbucksExpandsItsFootprintWithTheOpeningOfItsFirstStoreInGurgaon_tcm87-16190.pdf">Starbucks Expands Its Footprint With The Opening Of Its First Store In Gurgaon</a></p><p>GURGAON: July 10, 2013: Tata Starbucks Limited, the 50/50 joint venture between Starbucks Coffee Company (Nasdaq: SBUX) and Tata Global Beverages Limited, today entered the National Capital Region with the opening of its first store in Gurgaon at Ambience Mall.</p><p><a title="15-StarbucksExpandsItsFootprintWithTheOpeningOfItsFirstStoreInGurgaon" href="../../media/15-StarbucksExpandsItsFootprintWithTheOpeningOfItsFirstStoreInGurgaon_tcm87-16190.pdf">(more)</a></p><p><br /></p><p>June 3, 2013</p><p><a title="16-StarbucksExpandsPresenceInDelhiAndMumbai" href="../../media/16-StarbucksExpandsPresenceInDelhiAndMumbai_tcm87-16191.pdf">Starbucks Expands Presence In Delhi And Mumbai</a></p><p>NEW DELHI/ MUMBAI: June 3, 2013: Tata Starbucks Limited, the 50/50 joint venture between Starbucks Coffee Company (Nasdaq: SBUX) and Tata Global Beverages Limited, has opened three new stores across Delhi &amp; Mumbai, located at Greater Kailash I - M block market, Nehru Place Metro in New Delhi and R-city Mall, in Mumbai.</p><p><a title="16-StarbucksExpandsPresenceInDelhiAndMumbai" href="../../media/16-StarbucksExpandsPresenceInDelhiAndMumbai_tcm87-16191.pdf">(more)</a></p><p><br /></p><p>April 3, 2013</p><p><a title="17-StarbucksContinuesExpansionAtAirportLocationsWithTheOpeningOfItsNewStoreAtMumbaisChhatrapatiShivajiInternationalAirport" href="../../media/17-StarbucksContinuesExpansionAtAirportLocationsWithTheOpeningOfItsNewStoreAtMumbaisChhatrapatiShivajiInternationalAirport_tcm87-16192.pdf">Starbucks Continues Expansion At Airport Locations With The Opening Of Its New Store At Mumbai’s Chhatrapati Shivaji International Airport</a></p><p>MUMBAI; April 3, 2013 – Tata Starbucks Limited, the 50/50 joint venture between Starbucks Coffee Company (Nasdaq: SBUX) and Tata Global Beverages Limited, today announced the opening of its first store at Mumbai’s Chhatrapati Shivaji International Airport. Following the opening of two stores at the New Delhi Indira Gandhi International Airport (IGI) earlier this year, the company continues its expansion in this market segment to extend the Starbucks Experience to more customers.</p><p><a title="17-StarbucksContinuesExpansionAtAirportLocationsWithTheOpeningOfItsNewStoreAtMumbaisChhatrapatiShivajiInternationalAirport" href="../../media/17-StarbucksContinuesExpansionAtAirportLocationsWithTheOpeningOfItsNewStoreAtMumbaisChhatrapatiShivajiInternationalAirport_tcm87-16192.pdf">(more)</a></p><p><br /></p><p>Feb 8, 2013</p><p><a title="18-StarbucksCoffeeCompanyAndTataCoffeeLimitedInaugurateRoastingAndPackagingPlantInKushalnagarKarnataka" href="../../media/18-StarbucksCoffeeCompanyAndTataCoffeeLimitedInaugurateRoastingAndPackagingPlantInKushalnagarKarnataka_tcm87-16193.pdf">Starbucks Coffee Company And Tata Coffee Limited Inaugurate Roasting And Packaging Plant In Kushalnagar, Karnataka</a></p><p>Kushalnagar, Karnataka; February 8, 2013: In a key partnership milestone between Starbucks Coffee Company (Nasdaq: SBUX) and Tata Coffee Limited, the two companies today inaugurated a roasting and packaging plant in Kushalnagar in Coorg, Karnataka. This world-class facility enables roasting and packaging of green coffee beans for Starbucks stores in India and over time in select markets around the globe.</p><p><a title="18-StarbucksCoffeeCompanyAndTataCoffeeLimitedInaugurateRoastingAndPackagingPlantInKushalnagarKarnataka" href="../../media/18-StarbucksCoffeeCompanyAndTataCoffeeLimitedInaugurateRoastingAndPackagingPlantInKushalnagarKarnataka_tcm87-16193.pdf">(more)</a></p><p><br /></p><p>Nov 12, 2012</p><p><a title="19-TataStarbucksLtd.ResponseToaReportAboutTheWageStructureInStarbucksStoresInIndia" href="../../media/19-TataStarbucksLtd.ResponseToaReportAboutTheWageStructureInStarbucksStoresInIndia_tcm87-16194.pdf">Tata Starbucks Ltd.’s response to a report about the wage structure in Starbucks stores in India</a></p><p>This in reference to a recent report filed by a UK-based publication on the wage structure of Starbucks in India. Contrary to the information that is provided in the report, it is critical to highlight the importance that Starbucks has always placed on taking care of its people. This is in the form of compensation and benefits, as well as partner development through education, training and engagement; providing partners with an environment that supports and inspires.</p><p><a title="19-TataStarbucksLtd.ResponseToaReportAboutTheWageStructureInStarbucksStoresInIndia" href="../../media/19-TataStarbucksLtd.ResponseToaReportAboutTheWageStructureInStarbucksStoresInIndia_tcm87-16194.pdf">(more)</a></p><p><br /></p><p>Oct 19, 2012</p><p><a title="20-StarbucksOpensSpectacularFlagshipStoreInMumbaiHonoringTheDynamicCultureOfIndia" href="../../media/20-StarbucksOpensSpectacularFlagshipStoreInMumbaiHonoringTheDynamicCultureOfIndia_tcm87-16195.pdf">Starbucks Opens Spectacular Flagship Store in Mumbai, Honoring the Dynamic Culture of India</a></p><p>MUMBAI, India, October 19, 2012 - Tata Starbucks Limited, the 50/50 joint venture between Starbucks Coffee Company (Nasdaq: SBUX) and Tata Global Beverages Limited, today opened the doors to the first Starbucks store in India. This flagship store is located at the historic Elphinstone Building, Horniman Circle, Mumbai and marks the beginning of the iconic brand’s India journey. In addition to the flagship store at Horniman Circle, Tata Starbucks Limited will launch two more stores in the next week at Oberoi Mall and the Taj Mahal Palace Annexe in Mumbai.</p><p><a title="20-StarbucksOpensSpectacularFlagshipStoreInMumbaiHonoringTheDynamicCultureOfIndia" href="../../media/20-StarbucksOpensSpectacularFlagshipStoreInMumbaiHonoringTheDynamicCultureOfIndia_tcm87-16195.pdf">(more)</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<!--END: COMPONENT: Video -->
+
+
+    <!-- END: Main Region Content -->
+</div>
+<!-- END: Main Region -->
+            
+        </div>
+        
+    </div>
+    
+</main>
+<!-- BEGIN: Pre-Footer Region -->
+<div class="container">
+    <div class="grid">
+        <div class="column size12of12" typeof="Region" resource="PreFooter">
+            <!-- BEGIN: Pre-Footer Region Content -->
+            <div >
+        <ul class="breadcrumb" id="breadcrumb">
+                    <li class="breadcrumb__item"><a class="breadcrumb__link" href="../../about-us.html">About Us</a></li>
+                    <li class="breadcrumb__item"><a class="breadcrumb__link" href="../company-information.html">Our Company</a></li>
+                            <li class="breadcrumb__item">Starbucks Newsroom</li>
+        </ul>
+</div>
+
+            <!-- END: Pre-Footer Region Content -->
+        </div>
+    </div>
+</div>
+<!-- END: Pre-Footer Region -->
+<footer id="footer" tabindex="0" class="footer">
+    <div class="footer-top">
+        
+    <div class="container" >
+    <div class="grid">
+        <ul class="sb-social-icons column size12of12 med_size4of12 ">
+                    <li class="facebook">
+                        <a href="https://www.facebook.com/starbucksindia"  title="Facebook">
+                            <span class="hidden_visually">Facebook</span>
+                        </a>
+                    </li>
+                    <li class="twitter">
+                        <a href="https://twitter.com/starbucksindia"  title="Twitter">
+                            <span class="hidden_visually">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="instagram">
+                        <a href="https://www.instagram.com/starbucksindia"  title="Instagram">
+                            <span class="hidden_visually">Instagram</span>
+                        </a>
+                    </li>
+        </ul>
+
+        
+    </div>
+</div>
+
+    </div>
+    <div class="footer-main">
+        <div class="container" >
+            <div class="grid">
+                
+<style>
+    @media (min-width: 768px) {
+        .footer_global {
+            background-image: url(../../media/wordmark_footer_tcm87-397.png);
+        }
+    }
+</style>
+
+
+
+                <div class="footer_global accordion">
+                    
+<div class="info_block column size12of12 med_size4of12 lg_size2of12" >
+        <h4 >
+                <a href="../../about-us.html" title="About Us" >
+                    About Us
+                </a>
+            <label for="footer_link_group_2c389aeb-fd2b-4fd1-a304-97c6838db401" data-icon="&#x2304" tabindex="0"></label>
+        </h4>
+        <input id="footer_link_group_2c389aeb-fd2b-4fd1-a304-97c6838db401" name="footer" type="radio" aria-hidden="true" />
+            <ol>
+                    <li >
+                        <a href="../our-heritage.html" title="Our HeritageInvestor Relations" >Our Heritage</a>
+                    </li>
+                    <li >
+                        <a href="../company-information.html" title="Our Company" >Our Company</a>
+                    </li>
+            </ol>
+</div>
+<div class="info_block column size12of12 med_size4of12 lg_size2of12" >
+        <h4 >
+                <a href="../../card/rewards/customer-service.html" title="Customer Service" >
+                    Customer Service
+                </a>
+            <label for="footer_link_group_ce71943a-df7e-472d-9063-80f63b27724b" data-icon="&#x2304" tabindex="0"></label>
+        </h4>
+        <input id="footer_link_group_ce71943a-df7e-472d-9063-80f63b27724b" name="footer" type="radio" aria-hidden="true" />
+            <ol>
+                    <li >
+                        <a href="../../customer-service/frequently-asked-questions.html" title="Frequently Asked QuestionsWorking at Starbucks" >Frequently Asked Questions</a>
+                    </li>
+            </ol>
+</div>
+<div class="info_block column size12of12 med_size4of12 lg_size2of12" >
+        <h4 >
+Quick Links            <label for="footer_link_group_f24ef1d2-8811-44b6-b0a4-6c7fc08161de" data-icon="&#x2304" tabindex="0"></label>
+        </h4>
+        <input id="footer_link_group_f24ef1d2-8811-44b6-b0a4-6c7fc08161de" name="footer" type="radio" aria-hidden="true" />
+            <ol>
+                    <li >
+                        <a href="https://rewards.starbucks.in/store-locator" target="_blank" title="Store Locator" >Store Locator</a>
+                    </li>
+            </ol>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="grid">
+                
+
+<div class="column size12of12" >
+    <ul class="footer_sub">
+                <li >
+                    <a href="online-policies/web-accessibility.html" title="Web Accessiblity" >Web Accessiblity</a>
+                </li>
+                <li >
+                    <a href="../../card/learn-more/privacy-policy.html" title="Privacy Statement" >Privacy Statement</a>
+                </li>
+                <li >
+                    <a href="online-policies/terms-of-use.html" title="Terms of Use" target="_self">Terms of Use</a>
+                </li>
+                <li >
+                    <a href="../../site-map.html" title="Site Map" >Site Map</a>
+                </li>
+                <li >
+                    <a href="../../card/rewards/customer-service.html" title="Contact Us" >Contact Us</a>
+                </li>
+    </ul>
+    <div id="teconsent" class="teconsent_showBorder">
+            <script async="async" type="text/javascript" src="http://consent.truste.com/notice?domain=starbucks.com&amp;c=teconsent&amp;text=true&amp;js=nj&amp;noticeType=bb&amp;country=in&amp;language=en" crossorigin></script>
+    </div>
+</div>
+
+<div class="column size12of12" >
+        <p class="footer_copyright" >&#169; 2022 Starbucks Coffee Company. All rights reserved.</p>
+</div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+    
+
+    <!-- BEGIN: Bottom JavaScript -->
+    
+    <script src="https://www.starbucks.in/ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../static/js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
+
+<script type="text/javascript" src="../../static/js/framework.js"></script>
+    <script>
+    sb.namespace("config");
+    
+    sb.config.globalTextResources = {
+        closeButtonText: 'Close'
+    };
+</script>
+
+
+    
+
+    <script type="text/javascript" src="../../static/js/main.js"></script>
+    <script type="text/javascript" src="../../static/js/our-coffees.js"></script>
+    <!-- END: Bottom JavaScript -->
+</body>
+</html>
