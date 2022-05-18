@@ -1,5 +1,5 @@
 # starbucks_clone
-This is a fine clone of the queen of brews The Starbucks using html, css and js
+This is a full fine clone of the queen of brews "The Starbucks" using html, css and js
 
 
 ## Home page 
